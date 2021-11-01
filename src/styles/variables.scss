@@ -1,0 +1,13 @@
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin themeColor {
+  color: plum;
+}
+
+@mixin themeFont {
+  font-family: 'Nanum Myeongjo', serif;
+}
