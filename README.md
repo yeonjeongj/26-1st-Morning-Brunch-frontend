@@ -1,7 +1,5 @@
 ## About our project
 
-ㅎ
-
 - 브런치(https://brunch.co.kr/) 클론 프로젝트
 - 글이 아닌, 브런치에 대한 정보를 공유하는 서비스로 재구현
 

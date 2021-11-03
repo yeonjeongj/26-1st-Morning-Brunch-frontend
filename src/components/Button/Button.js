@@ -6,7 +6,7 @@ class Button extends React.Component {
     const { text, onClick, style } = this.props;
 
     return (
-      <button onClick={onClick} className={style ? 'btn colored' : 'btn'}>
+      <button onClick={onClick} className={`btn ${style ? 'colored' : ''}`}>
         {text}
       </button>
     );
