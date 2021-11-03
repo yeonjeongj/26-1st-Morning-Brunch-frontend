@@ -1,1 +1,45 @@
 @import '../../styles/variables.scss';
+
+.main {
+  margin-top: 50px;
+
+  header {
+    width: 970px;
+    margin: 0 auto;
+    line-height: 45px;
+
+    h1,
+    p {
+      font-family: 'Nanum Myeongjo', serif;
+    }
+
+    h1 {
+      font-size: 40px;
+    }
+
+    p {
+      color: rgb(202, 202, 202);
+      font-size: 32px;
+    }
+  }
+
+  .keywordContents,
+  .authorContents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+
+    h2 {
+      font-family: 'Nanum Myeongjo', serif;
+      font-size: 18px;
+      letter-spacing: 5px;
+    }
+
+    .subtitle {
+      margin-top: 15px;
+      color: rgb(154, 154, 154);
+      font-size: 12px;
+    }
+  }
+}
