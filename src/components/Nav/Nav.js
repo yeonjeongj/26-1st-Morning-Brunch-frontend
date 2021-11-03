@@ -1,26 +1,28 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import './Nav.scss';
 import Button from '../Button/Button';
+import './Nav.scss';
 
 class Nav extends React.Component {
   constructor() {
     super();
     this.state = {
       isOpen: false,
-      userLists: [],
+      userLists: {},
     };
   }
 
   hadleUserData() {
+    console.log('handleUserData실행');
+
     fetch('/data/userData.json', {
       method: 'GET', // GET method는 기본값이라서 생략이 가능합니다.
     }) // 예시코드에서는 이해를 돕기 위해 명시적으로 기입해뒀습니다.
       .then(res => res.json())
-      .then(res =>
+      .then(data =>
         this.setState({
-          userLists: res,
+          userLists: data,
         })
       );
   }
@@ -54,24 +56,37 @@ class Nav extends React.Component {
   };
 
   render() {
+    const { userLists } = this.state;
+    console.log(userLists);
     return (
-      <div className="mainNav">
-        <nav className={this.state.isOpen ? 'openNav' : 'closeNav'}>
-          <div className="toggle-btn" onClick={this.openMenu}>
-            <span />
-            <span />
-            <span />
-          </div>
+      // <nav className={`nav ${isOpen ? "open" : "close"}`}>
+      <>
+        <div className="toggleBtn" onClick={this.openMenu}>
+          <span />
+          <span />
+          <span />
+        </div>
 
+        <nav className={!this.state.isOpen ? 'openNav' : 'closeNav'}>
+          {/* <div className="toggle-btn" onClick={this.openMenu}>
+          <span />
+          <span />
+          <span />
+        </div> */}
           <div className="userInfo">
-            <div className="userImg">
-              <img src="userImg" />
-            </div>
-            <h4>독자</h4>
-            <p>어쩌구저쩌구</p>
+            <div
+              className="userImg"
+              style={{
+                background: `url(${userLists.userImg})`,
+              }}
+            ></div>
+            <h4>
+              {userLists.userName}
+              <span>{userLists.userNickName}</span>
+            </h4>
+            <p>{userLists.content}</p>
           </div>
-
-          <ul className="loginNav">
+          <ul className="mainNav">
             <li>
               <Link to="/main">브런치 홈</Link>
             </li>
@@ -90,7 +105,7 @@ class Nav extends React.Component {
             <Button text="로그아웃" onClick={this.goLogin} />
           </div>
         </nav>
-      </div>
+      </>
     );
   }
 }
