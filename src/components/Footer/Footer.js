@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.scss';
+import Nav from '../Nav/Nav';
 
 class Footer extends React.Component {
   render() {
@@ -10,8 +11,8 @@ class Footer extends React.Component {
             <div class="logoWrapper">
               <h2>morning & brunch</h2>
               <p>
-                We will find <br />
-                your morning sensibility
+                I always be with you, <br />
+                for your morning
               </p>
             </div>
 

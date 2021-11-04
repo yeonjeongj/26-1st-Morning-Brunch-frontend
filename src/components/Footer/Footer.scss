@@ -1,7 +1,7 @@
 @import '../../styles/variables.scss';
 
 footer {
-  padding: 2rem 0;
+  padding: 2rem 0 3rem;
   background: #000;
   font-size: 0.9rem;
 
@@ -12,11 +12,10 @@ footer {
     .footerUp {
       padding-bottom: 2rem;
       display: flex;
+      justify-content: space-between;
       border-bottom: 1px solid #999;
 
       .logoWrapper {
-        margin-right: 8rem;
-
         h2 {
           font-family: 'Tangerine', cursive;
           margin-bottom: 1rem;
@@ -25,6 +24,7 @@ footer {
         }
         p {
           color: #999;
+          line-height: 1.1rem;
         }
       }
 
@@ -33,7 +33,7 @@ footer {
         display: flex;
 
         li {
-          margin-right: 2rem;
+          margin-left: 2rem;
           font-size: 1.1rem;
           color: #999;
           line-height: 2;
