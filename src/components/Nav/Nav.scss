@@ -1,37 +1,24 @@
 @import '../../styles/variables.scss';
 
-.closeModal {
-  width: 100%;
-  height: 100%;
-  background: black;
-  position: fixed;
-  z-index: 96;
-}
-
-.openModal {
-  width: 1px;
-  height: 1px;
-  background: black;
-  position: fixed;
-  z-index: 96;
-}
-
-.basicNav {
-  transition: 0.3s;
-
-  .openNav {
+.Navigation {
+  // position: relative;
+  // top: 0;
+  // left: 0;
+  // animation: 3s ease-in;
+  // transition-duration: 0.3s;
+  // transition-timing-function: ease-in;
+  .popup {
     width: 270px;
     height: 100vh;
     border-right: 1px solid #ddd;
-    color: #333;
-    display: fixed;
     position: fixed;
+    left: 0;
     z-index: 99;
-    font-family: 'Noto Sans KR', sans-serif;
+    transition: 0.3s ease-in;
 
     .userInfo {
       padding: 5rem 0;
-      background: #fafafa;
+      background: #f6f6f6;
       text-align: center;
       border-bottom: 1px solid #ddd;
 
@@ -59,12 +46,10 @@
     }
 
     .mainNav {
-      display: block;
       padding: 5rem 0;
       text-align: center;
-      list-style: none;
 
-      li {
+      div {
         padding: 1.3rem;
 
         a {
@@ -99,6 +84,7 @@
           &:hover::after {
             width: 180px;
           }
+
           &:link,
           &:visited {
             text-decoration: none;
@@ -114,47 +100,47 @@
         }
       }
     }
-  }
-}
 
-.closeNav {
-  position: absolute;
-  left: -300px;
-}
+    .hotTopic {
+      width: 70%;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid black;
+      cursor: pointer;
 
-.hotTopic {
-  width: 70%;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid black;
-  cursor: pointer;
-
-  h4 {
-    width: 65%;
-    margin: 0 auto;
-    line-height: 1.5rem;
-    color: black;
-    font-size: 1.1rem;
-    font-family: 'Nanum Myeongjo', serif;
-  }
-}
-
-.settings {
-  width: 70%;
-  margin: 0 auto;
-  padding: 3rem 0;
-  display: flex;
-  justify-content: space-between;
-
-  button {
-    color: #999;
-    transition: 0.3s;
-    cursor: pointer;
-    &:hover {
-      @include themeColor;
-      border-color: #ffaa00;
+      h4 {
+        width: 65%;
+        margin: 0 auto;
+        line-height: 1.5rem;
+        color: black;
+        font-size: 1.1rem;
+        font-family: 'Nanum Myeongjo', serif;
+      }
     }
+
+    .settings {
+      width: 70%;
+      margin: 0 auto;
+      padding: 3rem 0;
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        color: #999;
+        transition: 0.3s;
+        cursor: pointer;
+        &:hover {
+          @include themeColor;
+          border-color: #ffaa00;
+        }
+      }
+    }
+  }
+
+  .hide {
+    position: absolute;
+    left: -300px;
   }
 }

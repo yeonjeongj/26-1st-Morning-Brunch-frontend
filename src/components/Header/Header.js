@@ -4,21 +4,22 @@ import './Header.scss';
 
 export class Header extends Component {
   goToMain = e => {
-    this.props.history.push('/main');
+    const { history } = this.props;
+    history.push('/main');
   };
 
   render() {
-    const { isOpen, openMenu } = this.props;
+    const { handleClick, targetHamburger } = this.props;
 
     return (
       <header>
-        <div class="toggleBtn" onClick={openMenu}>
+        <div className="toggleBtn" onClick={handleClick} ref={targetHamburger}>
           <span />
           <span />
           <span />
         </div>
 
-        <div class="logoWrapper" onClick={this.goToMain}>
+        <div className="logoWrapper" onClick={this.goToMain}>
           <h2>morning & brunch</h2>
         </div>
       </header>
