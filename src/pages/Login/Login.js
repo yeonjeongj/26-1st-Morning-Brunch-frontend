@@ -12,57 +12,74 @@ class Login extends React.Component {
   }
 
   goToMain = () => {
-    this.props.history.push('/Main');
+    const { history } = this.props;
+    history.push('/Main');
   };
 
-  updateIdInput = e => {
+  updateInputs = e => {
+    const { name, value } = e.target;
     this.setState({
-      idInput: `${e.target.value}`,
+      [name]: value,
     });
   };
 
-  updatePwInput = e => {
-    this.setState({
-      pwInput: `${e.target.value}`,
-    });
+  handleOnClick = e => {
+    const { idInput, pwInput } = this.state;
+    e.preventDefault();
+    fetch('', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: idInput,
+        password: pwInput,
+      }),
+    })
+      .then(response => response.json())
+      .then(response => {
+        if (response.message === 'SUCCESS') {
+          this.goToMain();
+        } else alert('아이디와 비밀번호를 다시 확인하세요');
+      });
   };
+
   goToSignUp = () => {
-    this.props.history.push('/Signup');
+    const { history } = this.props;
+    history.push('/Signup');
   };
 
   render() {
     const { idInput, pwInput } = this.state;
-    const isActiveButton = idInput.includes('@') && pwInput.length >= 5;
+    const isActiveButton =
+      idInput.includes('@') && idInput.includes('.') && pwInput.length >= 8;
     return (
-      <body className="login">
+      <div className="login">
         <main>
           <div className="loginWrap">
             <div className="bannerSlide">
-              <img src="images/IMG_1227.jpeg" alt="hanoi" />
+              <img src="images/login1.jpg" alt="login1" />
             </div>
             <div className="loginInner">
               <h1>morning & brunch</h1>
               <form className="loginForm">
                 <input
-                  id="id"
                   input
                   type="text"
                   placeholder="이메일"
-                  onChange={this.updateIdInput}
+                  name="idInput"
+                  onChange={this.updateInputs}
                 />
                 <input
-                  id="password"
                   input
                   type="password"
                   placeholder="비밀번호"
-                  onChange={this.updatePwInput}
+                  name="pwInput"
+                  onChange={this.updateInputs}
                 />
                 <button
                   className={
                     isActiveButton ? 'changeBtnColor' : 'normalBtnColor'
                   }
                   disabled={!isActiveButton}
-                  onClick={this.goToMain}
+                  onClick={this.handleOnClick}
                 >
                   로그인
                 </button>
@@ -78,7 +95,7 @@ class Login extends React.Component {
             </div>
           </div>
         </main>
-      </body>
+      </div>
     );
   }
 }
