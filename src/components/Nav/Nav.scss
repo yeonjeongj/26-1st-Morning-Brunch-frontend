@@ -1,118 +1,116 @@
 @import '../../styles/variables.scss';
 
-.toggleBtn {
-  position: absolute;
-  top: 30px;
-  left: 300px;
-  cursor: pointer;
-
-  span {
-    width: 30px;
-    height: 3px;
-    background: black;
-    display: block;
-    margin-top: 4px;
-  }
+.closeModal {
+  width: 100%;
+  height: 100%;
+  background: black;
+  position: fixed;
+  z-index: 96;
 }
 
-nav {
-  width: 270px;
-  height: 100vh;
-  border-right: 1px solid #ddd;
-  color: #333;
-  display: fixed;
-  z-index: 99;
-  font-family: 'Noto Sans KR', sans-serif;
+.openModal {
+  width: 1px;
+  height: 1px;
+  background: black;
+  position: fixed;
+  z-index: 96;
+}
 
-  .userInfo {
-    padding: 5rem 0;
-    background: #fafafa;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
+.basicNav {
+  transition: 0.3s;
 
-    .userImg {
-      width: 80px;
-      height: 80px;
-      margin-bottom: 1rem;
-      background-size: cover;
-      background-position: center;
-      border-radius: 100%;
-      position: relative;
-      left: 50%;
-      transform: translate(-50%, 0);
-    }
+  .openNav {
+    width: 270px;
+    height: 100vh;
+    border-right: 1px solid #ddd;
+    color: #333;
+    display: fixed;
+    position: fixed;
+    z-index: 99;
+    font-family: 'Noto Sans KR', sans-serif;
 
-    h4 {
-      margin-bottom: 1rem;
-      font-weight: border;
-      color: black;
+    .userInfo {
+      padding: 5rem 0;
+      background: #fafafa;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
 
-      span {
-        font-weight: normal;
-
-        &::before {
-          content: '/';
-          margin: 0 0.5rem;
-        }
-      }
-    }
-    p {
-      color: #999;
-    }
-  }
-
-  .mainNav {
-    display: block;
-    padding: 5rem 0;
-    text-align: center;
-    list-style: none;
-
-    li {
-      padding: 1.3rem;
-
-      a {
-        display: block;
-        width: 100px;
+      .userImg {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 1rem;
+        background-size: cover;
+        background-position: center;
+        border-radius: 100%;
         position: relative;
         left: 50%;
-        transform: translateX(-50%);
-        background: white;
-        z-index: 99;
+        transform: translate(-50%, 0);
+      }
 
-        &::after {
-          content: '';
+      h4 {
+        margin-bottom: 1rem;
+        font-weight: border;
+        color: black;
+      }
+      p {
+        color: #999;
+        line-height: 1.1rem;
+      }
+    }
+
+    .mainNav {
+      display: block;
+      padding: 5rem 0;
+      text-align: center;
+      list-style: none;
+
+      li {
+        padding: 1.3rem;
+
+        a {
           display: block;
-          position: absolute;
-          top: 50%;
+          width: 100px;
+          position: relative;
           left: 50%;
-          transform: translate(-50%, -50%);
-          z-index: -1;
-          width: 0px;
-          height: 1px;
-          background: linear-gradient(
-            to left,
-            #ffaa00 30%,
-            white 30% 70%,
-            #ffaa00 70%
-          );
-          opacity: 0.6;
-          transition: all 0.1s ease-in-out;
-        }
+          transform: translateX(-50%);
+          background: white;
+          z-index: 99;
 
-        &:hover::after {
-          width: 180px;
-        }
-        &:link,
-        &:visited {
-          text-decoration: none;
-          color: #333;
-          transition: 0.3s;
-        }
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            width: 0px;
+            height: 1px;
+            background: linear-gradient(
+              to left,
+              #ffaa00 30%,
+              white 30% 70%,
+              #ffaa00 70%
+            );
+            opacity: 0.6;
+            transition: all 0.1s ease-in-out;
+          }
 
-        &:hover,
-        &:active {
-          color: #ffaa00;
-          cursor: pointer;
+          &:hover::after {
+            width: 180px;
+          }
+          &:link,
+          &:visited {
+            text-decoration: none;
+            color: #333;
+            transition: 0.3s;
+          }
+
+          &:hover,
+          &:active {
+            color: #ffaa00;
+            cursor: pointer;
+          }
         }
       }
     }
@@ -121,8 +119,7 @@ nav {
 
 .closeNav {
   position: absolute;
-  left: -270px;
-  // display: none;
+  left: -300px;
 }
 
 .hotTopic {
