@@ -6,7 +6,7 @@ import './Footer.scss';
 class Footer extends React.Component {
   render() {
     return (
-      <footer>
+      <footer className="Footer">
         <div class="footerWrapper">
           <section class="footerUp">
             <div class="logoWrapper">
