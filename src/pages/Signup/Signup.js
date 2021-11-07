@@ -49,7 +49,10 @@ class Signup extends React.Component {
     const { pwInput, pwcfInput } = this.state;
     const passwordcfRegex =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    if (pwInput === pwcfInput && passwordcfRegex.test(e.target.value) == true) {
+    if (
+      pwInput === pwcfInput &&
+      passwordcfRegex.test(e.target.value) === true
+    ) {
       this.setState({
         pwcfCkInput: true,
       });
@@ -80,7 +83,7 @@ class Signup extends React.Component {
       .then(response => response.json())
       .then(response => {
         if (response.message === 'SUCCESS') {
-          alert('회원가입 완료');
+          alert('회원가입 성공');
           this.goToLogin();
         } else {
           alert('회원가입 실패');
