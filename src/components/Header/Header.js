@@ -3,6 +3,31 @@ import { withRouter } from 'react-router-dom';
 import './Header.scss';
 
 export class Header extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isActivate: false,
+    };
+  }
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll = e => {
+    if (window.scrollY === 0) {
+      this.setState({
+        isActivate: false,
+      });
+    } else {
+      this.setState({
+        isActivate: true,
+      });
+    }
+  };
+
   goToMain = e => {
     const { history } = this.props;
     history.push('/main');
@@ -10,9 +35,9 @@ export class Header extends Component {
 
   render() {
     const { handleClick, targetHamburger } = this.props;
-
+    const { isActivate } = this.state;
     return (
-      <header>
+      <header className={`Header ${isActivate ? 'activated' : null}`}>
         <div className="toggleBtn" onClick={handleClick} ref={targetHamburger}>
           <span />
           <span />

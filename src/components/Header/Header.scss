@@ -1,13 +1,18 @@
 @import '../../styles/variables.scss';
 
-header {
+.Header {
   width: 100%;
   padding: 1rem 2rem;
   display: flex;
-  background: rgba(255, 255, 255, 0.3);
-  border-bottom: 1px solid #ddd;
+  background-color: transparent;
   position: fixed;
   z-index: 97;
+  transition: 0.3s;
+
+  &.activated {
+    background: rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid #ddd;
+  }
 
   .toggleBtn {
     cursor: pointer;

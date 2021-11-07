@@ -50,25 +50,26 @@ class Nav extends React.Component {
   };
 
   handleClick = () => {
-    this.setState({ isHamburgerClicked: this.state.isHamburgerClicked });
+    const { isHamburgerClicked } = this.state;
+    this.setState({ isHamburgerClicked: !isHamburgerClicked });
   };
 
-  handleStop = e => {
+  handleNavStop = e => {
     e.stopPropagation();
   };
 
   render() {
-    const { isHamburgerClicked } = this.state;
-    const { userImg, userNickName, content } = this.state.userLists;
+    const { isHamburgerClicked, userLists } = this.state;
+    const { userImg, userNickName, content } = userLists;
     return (
-      <nav className="Navigation">
+      <nav className="Nav">
         <Header
           onClick={this.handleClick}
           targetHamburger={this.hamburgerRef}
         />
         <div
           className={`popup ${isHamburgerClicked ? '' : 'hide'}`}
-          onMouseDown={this.handleStop}
+          onMouseDown={this.handleNavStop}
           id="slideNav"
         >
           <div className="userInfo">
