@@ -1,0 +1,40 @@
+.writerInfo {
+  padding: 5rem 0;
+  background: #fbfbfb;
+
+  .infoWrapper {
+    width: 700px;
+    margin: 0 auto;
+    position: relative;
+
+    .userImg {
+      width: 100px;
+      height: 100px;
+      border-radius: 100%;
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      right: 0;
+      top: -100%;
+    }
+
+    .userInfo {
+      h3 {
+        color: #333;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .nickName {
+        margin-bottom: 1rem;
+        color: #666;
+        line-height: 1.3rem;
+      }
+
+      .content {
+        color: #959595;
+        line-height: 1.3rem;
+      }
+    }
+  }
+}

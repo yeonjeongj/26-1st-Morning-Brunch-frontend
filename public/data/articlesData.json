@@ -1,82 +1,21 @@
-[
-  {
-    "mainId": 1,
-    "mainName": "향신료의 나라, 인도의 브런치",
-    "mainImg": "https://images.unsplash.com/photo-1611725450473-d18c7b751c59?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1770&q=80",
-    "mainNickName": "각 국의 브런치 메뉴",
-    "writerName": "연정",
-    "writeDate": "2021.11.08"
-  },
-  {
-    "mainId": 2,
-    "mainName": "Brunch Classic, 잉글리시 브랙퍼스트",
-    "mainImg": "https://images.unsplash.com/photo-1524182576066-1bb979e25342?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-    "mainNickName": "브런치의 끝판왕",
-    "writerName": "연정",
-    "writeDate": "2021.11.08"
-  },
-  {
-    "mainId": 3,
-    "mainName": "여행, 그리고 아침의 기록",
-    "mainImg": "https://images.unsplash.com/photo-1531301117079-973e65903da0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aXRhbGlhJTIwZXNwcmVzc298ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=60",
-    "mainNickName": "이탈리아에서의 나의 여행",
-    "writerName": "연정",
-    "writeDate": "2021.11.08"
-  },
-  {
-    "mainId": 4,
-    "mainName": "한국에서도 이런 브런치를!",
-    "mainImg": "https://images.unsplash.com/photo-1528207776546-365bb710ee93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
-    "mainNickName": "내가 가본 최고의 브런치 집",
-    "writerName": "소윤",
-    "writeDate": "2021.11.08"
-  },
-  {
-    "mainId": 5,
-    "mainName": "에그 인 헬에 대하여",
-    "mainImg": "https://images.unsplash.com/photo-1634213672726-ce9c6acb91c2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2113&q=80",
-    "mainNickName": "레시피를 공유합니다",
-    "writerName": "소윤",
-    "writeDate": "2021.11.08"
-  },
-  {
-    "mainId": 6,
-    "mainName": "맥도날드에서도 브런치를!",
-    "mainImg": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA1MTRfMzYg%2FMDAxNjIwOTc1MTgyMTIx.ZVZDCmJaQcYrxoLnrHR0SYc6aZuvoPxmd9w4uVursDcg.82ryx0PRvja5Ek_n4tgpDxQMBMjHhStux4A2StAlyNIg.JPEG.hisehhee1021%2FIMG_9309.jpg&type=sc960_832",
-    "mainNickName": "저렴한 행복 함께 즐겨요",
-    "writerName": "소윤",
-    "writeDate": "2021.11.08"
-  },
-  {
-    "mainId": 7,
-    "mainName": "중국 하얼빈에 아침시장에서 찾은 보물",
-    "mainImg": "https://pic3.zhimg.com/80/v2-89bdfece424d3d4fc69abaeb1573c0b2_1440w.jpg",
-    "mainNickName": "각 국의 브런치 메뉴",
-    "writerName": "병문",
-    "writeDate": "2021.11.08"
-  },
-  {
-    "mainId": 8,
-    "mainName": "스웨덴 바이킹의 아침 ‘스모르가스'",
-    "mainImg": "http://23.251.131.186/~1547470139/globalassets/valueaddedpages/start-the-day-your-way/breakfast-around-the-world/braun-breakfast-world-section07.jpg?w=1536&h=864",
-    "mainNickName": "각 국의 브런치 메뉴",
-    "writerName": "병문",
-    "writeDate": "2021.11.08"
-  },
-  {
-    "mainId": 9,
-    "mainName": "러시아에서 블린을 모른다면 간첩!",
-    "mainImg": "https://mblogthumb-phinf.pstatic.net/20150612_72/proverbs1639_1434114535706vsIdU_JPEG/%AC%DC%AC%E2%AC%D1%AC%E3%AC%DA%AC%D3%AC%ED%AC%D6-%AC%DC%AC%D1%AC%E2%AC%E4%AC%DA%AC%DF%AC%DC%AC%DA-%AC%D6%AC%D5%AC%D1-%AC%D2%AC%DD%AC%DA%AC%DF%AC%ED-%AC%DF%AC%F1%AC%DE%AC%DC%AC%D1-960135.jpeg?type=w2",
-    "mainNickName": "각 국의 브런치 메뉴",
-    "writerName": "병문",
-    "writeDate": "2021.11.08"
-  },
-  {
-    "mainId": 10,
-    "mainName": "광안대교 뷰를 즐기며 먹는 브런치",
-    "mainImg": "https://i.ibb.co/L0QkmW1/image.png",
-    "mainNickName": "각 국의 브런치 메뉴",
-    "writerName": "유신",
-    "writeDate": "2021.11.08"
+{
+  "feeds": {
+    "feedsHeader": {
+      "mainName": "한국에서도 이런 브런치를!",
+      "mainImg": "https://images.unsplash.com/photo-1528207776546-365bb710ee93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
+      "mainNickName": "내가 가본 최고의 브런치 집",
+      "writerName": "소윤이지롱",
+      "writeDate": "2021.11.08"
+    },
+    "feedsText": {
+      "text": "어쩌구 저쩌구",
+      "feedstag": ["유럽", "서울", "맛집"]
+    },
+    "feedsUser": {
+      "userName": "소윤이지롱",
+      "userNickName": "블로거",
+      "userInfo": "맛집 좋아 공유 좋아 맛있는게 이세상에서 제일로 좋하앙",
+      "userImg": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=987&q=80"
+    }
   }
-]
+}
