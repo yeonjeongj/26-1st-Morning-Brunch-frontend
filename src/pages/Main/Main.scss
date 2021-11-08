@@ -2,6 +2,8 @@
 
 .main {
   margin-top: 50px;
+  overflow-x: hidden;
+  cursor: default;
 
   header {
     width: 970px;
@@ -10,7 +12,7 @@
 
     h1,
     p {
-      font-family: 'Nanum Myeongjo', serif;
+      @include themeFont;
     }
 
     h1 {
@@ -25,13 +27,10 @@
 
   .keywordContents,
   .authorContents {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px;
+    @include flex(flex, column, 0, center);
 
     h2 {
-      font-family: 'Nanum Myeongjo', serif;
+      @include themeFont;
       font-size: 18px;
       letter-spacing: 5px;
     }

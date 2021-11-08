@@ -1,7 +1,7 @@
 import React from 'react';
 // import Nav from '../../components/Nav/Nav';
 // import Header from '../../components/Header/Header';
-// import LikedContents from './Components/LikedContents';
+import LikedContents from './Components/LikedContents';
 import Keywords from './Components/Keywords';
 import Authors from './Components/Authors';
 // import Footer from '../../components/Footer/Footer';
@@ -14,13 +14,15 @@ class Main extends React.Component {
     this.state = {
       keywordsData: [],
       usersData: [],
+      slideContents1: [],
+      slideContents2: [],
+      slideContents3: [],
+      slideContents4: [],
     };
   }
 
   handleKeywordsData = () => {
-    fetch('data/main/keywordsData.json', {
-      method: 'GET',
-    })
+    fetch('data/main/keywordsData.json')
       .then(res => res.json())
       .then(data =>
         this.setState({
@@ -30,9 +32,7 @@ class Main extends React.Component {
   };
 
   handleUsersData = () => {
-    fetch('data/main/usersData.json', {
-      method: 'GET',
-    })
+    fetch('data/main/usersData.json')
       .then(res => res.json())
       .then(data =>
         this.setState({
@@ -41,13 +41,64 @@ class Main extends React.Component {
       );
   };
 
+  handleSlideContents1 = () => {
+    fetch('data/main/slideContents1.json')
+      .then(res => res.json())
+      .then(data =>
+        this.setState({
+          slideContents1: data,
+        })
+      );
+  };
+
+  handleSlideContents2 = () => {
+    fetch('data/main/slideContents2.json')
+      .then(res => res.json())
+      .then(data =>
+        this.setState({
+          slideContents2: data,
+        })
+      );
+  };
+
+  handleSlideContents3 = () => {
+    fetch('data/main/slideContents3.json')
+      .then(res => res.json())
+      .then(data =>
+        this.setState({
+          slideContents3: data,
+        })
+      );
+  };
+
+  handleSlideContents4 = () => {
+    fetch('data/main/slideContents4.json')
+      .then(res => res.json())
+      .then(data =>
+        this.setState({
+          slideContents4: data,
+        })
+      );
+  };
+
   componentDidMount() {
     this.handleKeywordsData();
     this.handleUsersData();
+    this.handleSlideContents1();
+    this.handleSlideContents2();
+    this.handleSlideContents3();
+    this.handleSlideContents4();
   }
 
   render() {
-    const { keywordsData, usersData } = this.state;
+    const {
+      keywordsData,
+      usersData,
+      slideContents1,
+      slideContents2,
+      slideContents3,
+      slideContents4,
+    } = this.state;
 
     return (
       <div className="main">
@@ -59,7 +110,12 @@ class Main extends React.Component {
           <p> 그리고 다시 느껴보세요.</p>
           <p> 세상 모든 곳의 즐거움을.</p>
         </header>
-        {/* <LikedContents /> */}
+        <LikedContents
+          slideContents1={slideContents1}
+          slideContents2={slideContents2}
+          slideContents3={slideContents3}
+          slideContents4={slideContents4}
+        />
         <Keywords keywordsData={keywordsData} />
         <Authors usersData={usersData} />
         {/* <Footer /> */}

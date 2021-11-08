@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "cover_image_url": "https://images.unsplash.com/photo-1542276867-c7f5032e1835?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=784&q=80",
+    "title": "밤에는 과자가 부른다",
+    "author_name": "by",
+    "content_url": ""
+  },
+  {
+    "id": 2,
+    "cover_image_url": "/images/main/dumpling.jpg",
+    "title": "싱글로 살아가려면 필요한 네 가지",
+    "author_name": "by",
+    "content_url": ""
+  },
+  {
+    "id": 3,
+    "cover_image_url": "/images/main/yogurt.jpg",
+    "title": "당근하러 가던 길의 미스테리",
+    "author_name": "by",
+    "content_url": ""
+  }
+]
