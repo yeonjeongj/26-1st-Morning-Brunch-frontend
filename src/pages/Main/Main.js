@@ -1,9 +1,9 @@
 import React from 'react';
 // import Nav from '../../components/Nav/Nav';
 // import Header from '../../components/Header/Header';
-import LikedContents from './Components/LikedContents';
-import Keywords from './Components/Keywords';
-import Authors from './Components/Authors';
+import LikedContents from './LikedContents/LikedContents';
+import Keywords from './Keywords/Keywords';
+import Authors from './Authors/Authors';
 // import Footer from '../../components/Footer/Footer';
 import './Main.scss';
 

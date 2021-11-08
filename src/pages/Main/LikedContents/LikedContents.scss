@@ -11,7 +11,7 @@
       width: 970px;
       height: 500px;
       margin: 0 auto;
-      transition: all 0.3s ease-in-out;
+      transition: all 400ms ease-in-out;
 
       .slideDisplay1 {
         @include grid(grid, 1fr 1fr);
@@ -38,13 +38,8 @@
         }
       }
 
-      div {
-        background-size: cover;
-        background-position: center;
-
-        &:hover {
-          background-size: 110%;
-        }
+      .slideContent {
+        overflow: hidden;
 
         a {
           @include flex(flex, column, center, center);
@@ -58,7 +53,7 @@
             width: 250px;
             color: white;
             text-align: center;
-            z-index: 2;
+            z-index: 10;
             cursor: pointer;
           }
 
@@ -73,13 +68,33 @@
             font-size: 15px;
           }
 
+          .articleImage,
           .cover {
             position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
+          }
+
+          .articleImage {
+            background-size: cover;
+            background-position: center;
+            transform: scale(1);
+            transition: transform 400ms ease-in-out;
+            z-index: 1;
+          }
+
+          &:hover .articleImage {
+            transform: scale(1.1);
+          }
+
+          .cover {
+            transition: background-color 400ms ease-in-out;
             background-color: rgba(0, 0, 0, 0.2);
+            z-index: 5;
+          }
+
+          &:hover .cover {
+            background-color: rgba(0, 0, 0, 0.4);
           }
         }
       }

@@ -7,10 +7,14 @@ class SlideContent extends React.Component {
       this.props;
 
     return (
-      <div key={key} style={{ backgroundImage: `url(${backgroundImage})` }}>
+      <div className="slideContent" key={key}>
         <Link to={contentUrl}>
           <p className="articleText">{articleText}</p>
           <p className="articleAuthor">by&nbsp;&nbsp;{articleAuthor}</p>
+          <div
+            style={{ backgroundImage: `url(${backgroundImage})` }}
+            className="articleImage"
+          />
           <div className="cover" />
         </Link>
       </div>
