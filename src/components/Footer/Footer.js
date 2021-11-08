@@ -1,15 +1,14 @@
 import React from 'react';
-import { INFO } from './footerData/Info';
-import { SITEMAP } from './footerData/siteMap';
+import { SITE_MAP, INFO } from './FooterData';
 import './Footer.scss';
 
 class Footer extends React.Component {
   render() {
     return (
-      <footer className="Footer">
-        <div class="footerWrapper">
-          <section class="footerUp">
-            <div class="logoWrapper">
+      <footer className="footer">
+        <div className="footerWrapper">
+          <section className="footerUp">
+            <div className="logoWrapper">
               <h2>morning & brunch</h2>
               <p>
                 I always be with you, <br />
@@ -18,14 +17,14 @@ class Footer extends React.Component {
             </div>
 
             <ul className="pageList">
-              {SITEMAP.map(link => {
+              {SITE_MAP.map(link => {
                 return <li key={link.id}>{link.content}</li>;
               })}
             </ul>
           </section>
 
-          <section class="footerDown">
-            <div class="footerInt">
+          <section className="footerDown">
+            <div className="footerInt">
               <ul>
                 {INFO.map(info => {
                   return <li key={info.id}>{info.content}</li>;
