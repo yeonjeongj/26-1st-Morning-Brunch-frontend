@@ -9,23 +9,19 @@ export class Header extends Component {
       isActivate: false,
     };
   }
+
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
   }
+
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
   }
 
   handleScroll = e => {
-    if (window.scrollY === 0) {
-      this.setState({
-        isActivate: false,
-      });
-    } else {
-      this.setState({
-        isActivate: true,
-      });
-    }
+    this.setState({
+      isActivate: window.scrollY === 0 ? false : true,
+    });
   };
 
   goToMain = e => {

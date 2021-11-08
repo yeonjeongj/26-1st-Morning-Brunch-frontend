@@ -41,11 +41,11 @@
     }
 
     .mainNav {
-      padding: 5rem 0;
+      padding: 6rem 0;
       text-align: center;
 
       div {
-        padding: 1.3rem;
+        padding: 2rem;
 
         a {
           display: block;
@@ -124,6 +124,7 @@
 
       button {
         color: #999;
+        padding: 10px 23px;
         transition: 0.3s;
         cursor: pointer;
         &:hover {

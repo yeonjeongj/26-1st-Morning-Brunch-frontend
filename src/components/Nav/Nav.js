@@ -7,7 +7,10 @@ import './Nav.scss';
 class Nav extends React.Component {
   constructor() {
     super();
-    this.state = { isHamburgerClicked: false, userLists: {} };
+    this.state = {
+      isHamburgerClicked: false,
+      userLists: {},
+    };
     this.hamburgerRef = React.createRef();
   }
 
@@ -38,15 +41,10 @@ class Nav extends React.Component {
   }
 
   handleClickOutside = event => {
-    if (this.hamburgerRef.current.contains(event.target)) {
-      this.setState({
-        isHamburgerClicked: true,
-      });
-    } else {
-      this.setState({
-        isHamburgerClicked: false,
-      });
-    }
+    const condition = this.hamburgerRef.current.contains(event.target);
+    this.setState({
+      isHamburgerClicked: condition ? true : false,
+    });
   };
 
   handleClick = () => {
