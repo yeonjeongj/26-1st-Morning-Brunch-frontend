@@ -9,7 +9,6 @@ import Mypage from './pages/Mypage/Mypage';
 
 //공통 컴포넌트
 import Nav from './components/Nav/Nav';
-import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
 export class Routes extends React.Component {
@@ -17,9 +16,8 @@ export class Routes extends React.Component {
     return (
       <Router>
         <Nav />
-        <Header />
         <Switch>
-          <Route exact path="/login" component={Login} />
+          <Route exact path="/" component={Login} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/main" component={Main} />
           <Route exact path="/articles" component={Articles} />
