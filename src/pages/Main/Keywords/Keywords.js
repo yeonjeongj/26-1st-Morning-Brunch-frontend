@@ -13,9 +13,9 @@ class Keywords extends React.Component {
         <div className="keywordWrapper">
           {keywordsData.map(keyword => {
             return (
-              <div key={keyword.id}>
-                <Link to={keyword.url}>{keyword.keyword}</Link>
-              </div>
+              <Link to={keyword.url} key={keyword.id}>
+                {keyword.keyword}
+              </Link>
             );
           })}
         </div>
