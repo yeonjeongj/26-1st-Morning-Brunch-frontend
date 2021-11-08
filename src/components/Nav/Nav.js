@@ -62,7 +62,7 @@ class Nav extends React.Component {
     const { isHamburgerClicked, userLists } = this.state;
     const { userImg, userNickName, content } = userLists;
     return (
-      <nav className="Nav">
+      <nav className="nav">
         <Header
           onClick={this.handleClick}
           targetHamburger={this.hamburgerRef}
@@ -92,9 +92,8 @@ class Nav extends React.Component {
           </div>
           <div
             className="hotTopic"
-            onClick={e => {
-              this.goToPlace`${'/articles'}`;
-              e.preventDefault();
+            onClick={() => {
+              this.goToPlace('/articles');
             }}
           >
             <h4>
@@ -103,11 +102,8 @@ class Nav extends React.Component {
             </h4>
           </div>
           <div className="settings">
-            <Button text="설정" onClick={() => this.goToPlace`${'/mypage'}`} />
-            <Button
-              text="로그아웃"
-              onClick={() => this.goToPlace`${'/login'}`}
-            />
+            <Button text="설정" onClick={() => this.goToPlace('/mypage')} />
+            <Button text="로그아웃" onClick={() => this.goToPlace('/login')} />
           </div>
         </div>
       </nav>

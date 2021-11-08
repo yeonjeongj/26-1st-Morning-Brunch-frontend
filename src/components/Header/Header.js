@@ -37,7 +37,7 @@ export class Header extends Component {
     const { handleClick, targetHamburger } = this.props;
     const { isActivate } = this.state;
     return (
-      <header className={`Header ${isActivate ? 'activated' : null}`}>
+      <header className={`header ${isActivate ? 'activated' : null}`}>
         <div className="toggleBtn" onClick={handleClick} ref={targetHamburger}>
           <span />
           <span />
