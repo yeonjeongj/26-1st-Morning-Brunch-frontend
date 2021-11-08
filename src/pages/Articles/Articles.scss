@@ -1,1 +1,152 @@
 @import '../../styles/variables.scss';
+
+.Articles {
+  .mainImg {
+    height: 500px;
+    background: url('https://images.unsplash.com/photo-1528207776546-365bb710ee93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80')
+      no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+
+    .mainCover {
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .mainName {
+      position: absolute;
+      bottom: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+
+      h1 {
+        margin-bottom: 1rem;
+        font-family: 'Nanum Myeongjo';
+        font-size: 4rem;
+        color: white;
+      }
+
+      .intro {
+        font-size: 1.3rem;
+        margin-bottom: 3rem;
+        color: white;
+      }
+
+      .date {
+        font-size: 0.9rem;
+        color: white;
+
+        span {
+          color: white;
+
+          &::before {
+            content: '·';
+            padding: 0 0.5rem;
+          }
+
+          &::after {
+            content: '';
+            padding: 0 0.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  .mainText {
+    width: 700px;
+    margin: 0 auto;
+    padding: 8rem 0;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    color: #333;
+
+    img {
+      width: 100%;
+      margin: 1rem 0;
+    }
+  }
+
+  .buttonWrapper {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    .tagBtn {
+      button {
+        margin-right: 0.5rem;
+        transition: 0.3s;
+        cursor: pointer;
+      }
+    }
+
+    .heartBtn {
+      display: flex;
+
+      p {
+        color: #333;
+        font-size: 1.1rem;
+        line-height: 1.8rem;
+        margin-right: 0.5rem;
+      }
+
+      .icon {
+        width: 30px;
+        height: 30px;
+        // background: url('https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/heart-1024.png')
+        //   no-repeat;
+        background-size: cover;
+        background-position: center;
+        transition: 0.3s;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .writerInfo {
+    padding: 3rem 0;
+    background: #fbfbfb;
+
+    .infoWrapper {
+      width: 700px;
+      margin: 0 auto;
+      position: relative;
+
+      .userImg {
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        background: url(https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3687&q=80)
+          no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        right: 0;
+        top: -100%;
+      }
+
+      .userInfo {
+        h3 {
+          color: #333;
+          font-size: 1.4rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .nickName {
+          margin-bottom: 1rem;
+          color: #666;
+          line-height: 1.3rem;
+        }
+
+        .content {
+          color: #959595;
+          line-height: 1.3rem;
+        }
+      }
+    }
+  }
+}
