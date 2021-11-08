@@ -12,32 +12,44 @@
     .myPageWrap {
       display: flex;
       align-items: center;
-      // justify-content: center;
       margin: auto;
       width: 700px;
       height: 161px;
+      position: relative;
+
+      .myImg {
+        position: absolute;
+        right: 0;
+        top: -25%;
+        .thumb {
+          border-radius: 100%;
+          width: 100px;
+          height: 100px;
+        }
+      }
     }
     .myProfile {
       .myUser {
         font-weight: bold;
         font-size: 30px;
-        padding: 10px 0;
+        padding: 20px 0 10px 0;
       }
       .myUserIntro {
         color: grey;
       }
       dl {
-        display: block;
-        padding-top: 25px;
+        padding-top: 30px;
+        width: 700px;
 
         dd {
           display: flex;
           flex-direction: column;
           float: left;
-          margin-right: 35px;
+          margin-right: 40px;
 
           em {
             font-size: 12px;
+            font-style: normal;
             color: grey;
             margin-bottom: 5px;
           }
@@ -46,7 +58,34 @@
             color: grey;
           }
         }
+        .btnMore {
+          display: flex;
+          align-items: center;
+          position: absolute;
+          right: 0;
+
+          .more {
+            width: 30px;
+            height: 30px;
+          }
+        }
       }
+    }
+  }
+  .blogLike {
+    @include flexCenter;
+
+    button {
+      border: none;
+      background-color: white;
+      font-size: 20px;
+      margin: 30px 10px;
+      cursor: pointer;
+    }
+    .activeMyBlogBtn,
+    .activeLikeBlogBtn {
+      color: #ffaa00;
+      border-bottom: 1px solid #ffaa00;
     }
   }
 }
