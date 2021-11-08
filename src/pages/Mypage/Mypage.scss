@@ -1,1 +1,52 @@
 @import '../../styles/variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Tangerine&display=swap');
+
+.myPage {
+  height: 100%;
+
+  main {
+    .myPageCover {
+      background-color: #f8f8f8;
+      height: 320px;
+    }
+    .myPageWrap {
+      display: flex;
+      align-items: center;
+      // justify-content: center;
+      margin: auto;
+      width: 700px;
+      height: 161px;
+    }
+    .myProfile {
+      .myUser {
+        font-weight: bold;
+        font-size: 30px;
+        padding: 10px 0;
+      }
+      .myUserIntro {
+        color: grey;
+      }
+      dl {
+        display: block;
+        padding-top: 25px;
+
+        dd {
+          display: flex;
+          flex-direction: column;
+          float: left;
+          margin-right: 35px;
+
+          em {
+            font-size: 12px;
+            color: grey;
+            margin-bottom: 5px;
+          }
+          span {
+            font-size: 20px;
+            color: grey;
+          }
+        }
+      }
+    }
+  }
+}
