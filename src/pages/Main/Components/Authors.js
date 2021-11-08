@@ -18,7 +18,7 @@ class Authors extends React.Component {
 
   goToContent = value => {
     const { history } = this.props;
-    history.push(`url(${value})`);
+    history.push(value);
   };
 
   render() {
@@ -28,7 +28,7 @@ class Authors extends React.Component {
     return (
       <section className="authorContents">
         <h2>MORNING & BRUNCH WRITERS</h2>
-        <span className="subtitle">브런치 추천 작가</span>
+        <span className="subtitle">모닝엔 브런치 추천 작가</span>
         <div className="authorKeywordBtns">
           <Button
             text="비건"
