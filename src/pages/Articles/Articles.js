@@ -6,11 +6,28 @@ class Articles extends React.Component {
   constructor() {
     super();
     this.state = {
+      articleLists: [],
       isliked: false,
       like: 'https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678087-heart-1024.png',
       unLike:
         'https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/heart-1024.png',
     };
+  }
+
+  hadleArticleMain() {
+    fetch('/data/articlesImg.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          articleLists: data,
+        });
+      });
+  }
+
+  componentDidMount() {
+    this.hadleArticleMain();
   }
 
   handleliked = () => {
@@ -21,8 +38,9 @@ class Articles extends React.Component {
 
   render() {
     console.log(this.state.isliked);
+    const { articleLists } = this.state;
     return (
-      <div className="Articles">
+      <div className="articles">
         <main className="mainImg">
           <div className="mainCover" />
           <div className="mainName">
