@@ -9,13 +9,25 @@ class Articles extends React.Component {
     this.state = {
       articleLists: {},
       isLiked: false,
-      like: 'https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678087-heart-1024.png',
-      unLike:
-        'https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/heart-1024.png',
+      likesNumber: '231',
     };
   }
 
-  hadleArticleMain() {
+  // handleContents =()=> {
+  //   fetch(`${API}/users/${this.props.match.params.id}`)
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       this.setState({
+  //         articleLists: data,
+  //       });
+  //     });
+  // }
+
+  // componentDidMount() {
+  //   this.handleContents();
+  // }
+
+  handleArticleMain = () => {
     fetch('/data/articlesData.json', {
       method: 'GET',
     })
@@ -25,10 +37,10 @@ class Articles extends React.Component {
           articleLists: data,
         });
       });
-  }
+  };
 
   componentDidMount() {
-    this.hadleArticleMain();
+    this.handleArticleMain();
   }
 
   handleLiked = () => {
@@ -38,8 +50,21 @@ class Articles extends React.Component {
     });
   };
 
+  handleLikeNumber = () => {
+    if (this.state.isLiked === true) {
+      this.setState({
+        likesNumber: Number(this.state.likesNumber) + 1,
+      });
+    } else {
+      this.setState({
+        likesNumber: Number(this.state.likesNumber) - 2,
+      });
+    }
+  };
+
   render() {
-    const { articleLists, like, unLike, isLiked, handleLiked } = this.state;
+    const { articleLists, isLiked, likesNumber } = this.state;
+    console.log(this.state.likesNumber);
     return (
       <>
         {articleLists.feeds && (
@@ -47,10 +72,9 @@ class Articles extends React.Component {
             <DetailHeader articleLists={articleLists.feeds.feedsHeader} />
             <DetailText
               articleLists={articleLists.feeds.feedsText}
-              like={like}
-              unLike={unLike}
               isLiked={isLiked}
-              handleLiked={handleLiked}
+              handleLiked={this.handleLiked}
+              likesNumber={likesNumber}
             />
             <DetailUser articleLists={articleLists.feeds.feedsUser} />
           </div>
