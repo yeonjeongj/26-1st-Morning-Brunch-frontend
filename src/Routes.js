@@ -20,7 +20,7 @@ export class Routes extends React.Component {
           <Route exact path="/" component={Login} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/main" component={Main} />
-          <Route exact path="/articles" component={Articles} />
+          <Route exact path="/articles/:id" component={Articles} />
           <Route exact path="/mypage" component={Mypage} />
         </Switch>
         <Footer />

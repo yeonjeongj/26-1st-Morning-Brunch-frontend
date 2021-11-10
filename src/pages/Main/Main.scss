@@ -1,1 +1,43 @@
 @import '../../styles/variables.scss';
+
+.main {
+  padding-top: 90px;
+  overflow-x: hidden;
+
+  .mainDescription {
+    width: 970px;
+    margin: 0 auto;
+    line-height: 45px;
+
+    h1,
+    p {
+      @include themeFont;
+    }
+
+    h1 {
+      font-size: 40px;
+    }
+
+    p {
+      color: rgb(202, 202, 202);
+      font-size: 32px;
+    }
+  }
+
+  .keywordContents,
+  .authorContents {
+    @include flex(flex, column, 0, center);
+
+    h2 {
+      @include themeFont;
+      font-size: 18px;
+      letter-spacing: 5px;
+    }
+
+    .subtitle {
+      margin-top: 15px;
+      color: rgb(154, 154, 154);
+      font-size: 12px;
+    }
+  }
+}

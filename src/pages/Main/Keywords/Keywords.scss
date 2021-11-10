@@ -1,0 +1,30 @@
+@import '../../../styles/variables.scss';
+
+.keywordContents {
+  width: 100%;
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+  .keywordWrapper {
+    @include grid(grid, repeat(8, 1fr), 1px);
+    margin-top: 50px;
+    border: 1px solid rgb(236, 236, 236);
+    background-color: rgb(236, 236, 236);
+
+    div {
+      @include flex(flex, row, center, center);
+      text-align: center;
+      width: 120px;
+      height: 120px;
+      background-color: white;
+      color: rgb(103, 103, 103);
+      text-decoration: none;
+      line-height: 20px;
+      word-break: keep-all;
+
+      &:hover {
+        @include themeColor;
+      }
+    }
+  }
+}
