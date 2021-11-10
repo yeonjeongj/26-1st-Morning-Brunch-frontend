@@ -1,13 +1,32 @@
-@mixin flexCenter {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 @mixin themeColor {
-  color: plum;
+  color: #ffaa00;
+  border: 1px solid #ffaa00;
 }
 
 @mixin themeFont {
   font-family: 'Nanum Myeongjo', serif;
+}
+
+@mixin flex(
+  $display: flex,
+  $flex-direction: row,
+  $justify-content: start,
+  $align-items: start
+) {
+  display: $display;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin grid(
+  $display: grid,
+  $grid-template-columns: auto,
+  $grid-gap: 0,
+  $grid-template-rows: auto
+) {
+  display: $display;
+  grid-template-columns: $grid-template-columns;
+  grid-template-rows: $grid-template-rows;
+  grid-gap: $grid-gap;
 }

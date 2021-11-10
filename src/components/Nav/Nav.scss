@@ -1,1 +1,142 @@
 @import '../../styles/variables.scss';
+
+.nav {
+  .popup {
+    width: 270px;
+    height: 100vh;
+    border-right: 1px solid #ddd;
+    position: fixed;
+    left: 0;
+    z-index: 99;
+    transition: 0.3s ease-in;
+
+    .userInfo {
+      padding: 5rem 0;
+      background: #f6f6f6;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+
+      .userImg {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 1rem;
+        background-size: cover;
+        background-position: center;
+        border-radius: 100%;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+
+      h4 {
+        margin-bottom: 1rem;
+        font-weight: border;
+        color: black;
+      }
+
+      p {
+        color: #999;
+        line-height: 1.1rem;
+      }
+    }
+
+    .mainNav {
+      padding: 6rem 0;
+      text-align: center;
+
+      div {
+        padding: 2rem;
+
+        a {
+          display: block;
+          width: 100px;
+          position: relative;
+          left: 50%;
+          transform: translateX(-50%);
+          background: white;
+          z-index: 99;
+
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            width: 0px;
+            height: 1px;
+            background: linear-gradient(
+              to left,
+              #ffaa00 30%,
+              white 30% 70%,
+              #ffaa00 70%
+            );
+            opacity: 0.6;
+            transition: all 0.1s ease-in-out;
+          }
+
+          &:hover::after {
+            width: 180px;
+          }
+
+          &:link,
+          &:visited {
+            text-decoration: none;
+            color: #333;
+            transition: 0.3s;
+          }
+
+          &:hover,
+          &:active {
+            color: #ffaa00;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .hotTopic {
+      width: 70%;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid black;
+      cursor: pointer;
+
+      h4 {
+        width: 65%;
+        margin: 0 auto;
+        line-height: 1.5rem;
+        color: black;
+        font-size: 1.1rem;
+        font-family: 'Nanum Myeongjo', serif;
+      }
+    }
+
+    .settings {
+      width: 70%;
+      margin: 0 auto;
+      padding: 3rem 0;
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        color: #999;
+        padding: 10px 23px;
+        transition: 0.3s;
+        cursor: pointer;
+        &:hover {
+          @include themeColor;
+          border-color: #ffaa00;
+        }
+      }
+    }
+  }
+
+  .hide {
+    position: absolute;
+    left: -300px;
+  }
+}

@@ -1,0 +1,14 @@
+@import '../../styles/variables.scss';
+
+.btn {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  background-color: white;
+  color: rgb(123, 123, 123);
+  text-align: center;
+
+  &.colored {
+    @include themeColor;
+  }
+}
