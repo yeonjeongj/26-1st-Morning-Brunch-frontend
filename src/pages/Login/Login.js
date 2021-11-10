@@ -25,6 +25,7 @@ class Login extends React.Component {
 
   submitUserInfo = e => {
     const { idInput, pwInput } = this.state;
+
     e.preventDefault();
     fetch('http://10.58.4.223:8000/users/signin', {
       method: 'POST',
@@ -45,12 +46,15 @@ class Login extends React.Component {
     const { idInput, pwInput } = this.state;
     const isActiveButton =
       idInput.includes('@') && idInput.includes('.') && pwInput.length >= 8;
+
     return (
-      <main className="login">
+      <section className="login">
         <div className="loginWrap">
-          <div className="bannerSlide">
-            <img src="images/login1.jpg" alt="login1" />
-          </div>
+          <img
+            className="mainImage"
+            alt="morning&brunch"
+            src="images/login1.jpg"
+          />
           <div className="loginInner">
             <h1>morning & brunch</h1>
             <form className="loginForm">
@@ -79,16 +83,14 @@ class Login extends React.Component {
               </button>
             </form>
             <div className="underLoginForm">
-              <div>
-                <Link to="/Signup">회원가입</Link>
-              </div>
-              <a href="/find" className="lost">
+              <Link to="/Signup">회원가입</Link>
+              <Link to="/find" className="lost">
                 비밀번호 찾기
-              </a>
+              </Link>
             </div>
           </div>
         </div>
-      </main>
+      </section>
     );
   }
 }

@@ -34,6 +34,7 @@ class Signup extends React.Component {
       authorJobInput,
       authorIntroInput,
     } = this.state;
+
     e.preventDefault();
     fetch('http://10.58.4.223:8000/users/signup', {
       method: 'POST',
