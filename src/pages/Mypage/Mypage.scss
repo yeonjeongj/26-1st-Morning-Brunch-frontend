@@ -74,8 +74,7 @@
     }
   }
   .blogLike {
-    @include flexCenter;
-
+    @include flex(flex, 0, center, center);
     button {
       border: none;
       background-color: white;
@@ -90,6 +89,6 @@
     }
   }
   .myBlog {
-    @include flexCenter;
+    @include flex(flex, 0, center, center);
   }
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Button from '../../components/Button/Button';
 import Bloglist from './Bloglist/Bloglist';
 import Likebloglist from './Likebloglist/Likebloglist';
+import Recentbloglist from './Recentbloglist/Recentbloglist';
 import './Mypage.scss';
 
 class Mypage extends Component {
@@ -11,6 +12,7 @@ class Mypage extends Component {
       openMyBlog: true,
       myBlogList: [],
       likeBlogList: [],
+      recentBlogList: [],
       userInfo: {},
     };
   }
@@ -24,17 +26,20 @@ class Mypage extends Component {
       openMyBlog: false,
     });
   };
-  handleUserData() {
-    fetch('./Userdata.json')
+
+  handleUserData = () => {
+    fetch('./data/myinfo.json')
       .then(res => res.json())
       .then(data =>
         this.setState({
           userInfo: data,
         })
       );
-  }
+  };
 
   componentDidMount() {
+    this.handleUserData();
+
     fetch('./data/blogmock.json')
       .then(res => res.json())
       .then(data => {
@@ -49,11 +54,20 @@ class Mypage extends Component {
           likeBlogList: data,
         });
       });
+    fetch('/data/recentblogmock.json')
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          recentBlogList: data,
+        });
+      });
   }
 
   render() {
-    const { openMyBlog, myBlogList, likeBlogList, userInfo } = this.state;
+    const { openMyBlog, myBlogList, likeBlogList, recentBlogList, userInfo } =
+      this.state;
     const { userName, userIntro, userImg } = userInfo;
+
     return (
       <div className="myPage">
         <main>
@@ -113,8 +127,8 @@ class Mypage extends Component {
             </ul>
           </div>
         ) : (
-          <>
-            <div className="likeIt">좋아요한 글 {'>'}</div>
+          <div className="likeInner">
+            <div className="likePost">좋아요한 글 {'>'}</div>
             <div className="likeBlog">
               {likeBlogList.map(like => {
                 return (
@@ -129,7 +143,22 @@ class Mypage extends Component {
                 );
               })}
             </div>
-          </>
+            <div className="recentPost">최근 본 글 {'>'}</div>
+            <div className="recentBlog">
+              {recentBlogList.map(recent => {
+                return (
+                  <Recentbloglist
+                    key={recent.id}
+                    username={recent.userName}
+                    title={recent.title}
+                    subtitle={recent.subTitle}
+                    articlecontent={recent.articleContent}
+                    img={recent.img}
+                  />
+                );
+              })}
+            </div>
+          </div>
         )}
       </div>
     );

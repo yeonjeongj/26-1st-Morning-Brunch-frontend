@@ -1,28 +1,28 @@
 .likeInner {
-  .likePost {
+  .recentPost {
     width: 960px;
     height: 30px;
-    margin: 0 auto;
+    margin: 20px auto;
     font-weight: bold;
   }
 
-  .likeBlog {
+  .recentBlog {
     display: grid;
-    align-items: center;
     grid-template-columns: 2fr 2fr;
+    align-items: center;
     width: 960px;
     margin: 0 auto;
 
     .blogList {
-      list-style: none;
       position: relative;
       display: flex;
       align-items: center;
-      border-bottom: 1px solid lightgrey;
       width: 450px;
       height: 140px;
       margin-right: 60px;
       padding: 20px 0;
+      border-bottom: 1px solid lightgrey;
+      list-style: none;
 
       .post {
         position: relative;
