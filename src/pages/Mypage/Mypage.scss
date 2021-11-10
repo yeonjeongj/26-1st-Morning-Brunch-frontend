@@ -22,6 +22,7 @@
         right: 0;
         top: -25%;
         .thumb {
+          object-fit: cover;
           border-radius: 100%;
           width: 100px;
           height: 100px;
@@ -87,5 +88,8 @@
       color: #ffaa00;
       border-bottom: 1px solid #ffaa00;
     }
+  }
+  .myBlog {
+    @include flexCenter;
   }
 }

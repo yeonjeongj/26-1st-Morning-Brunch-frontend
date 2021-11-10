@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import './Bloglist.scss';
+import './Likebloglist.scss';
 
-class Bloglist extends Component {
+class Likebloglist extends Component {
   render() {
-    const { title, subtitle, articlecontent, img } = this.props;
+    const { title, subtitle, articlecontent, img, username } = this.props;
     return (
-      <li className="blogList">
+      <div className="blogList">
         <div className="post">
           <strong className="title">{title}</strong>
           <div className="wrapContent">
@@ -13,11 +13,14 @@ class Bloglist extends Component {
             <span className="icoBar">|</span>
             <span className="articleContent">{articlecontent}</span>
           </div>
+          <div className="writer">
+            <i>by</i>&nbsp;&nbsp;{username}
+          </div>
         </div>
         <img className="coverImg" src={img} alt="coverimg" />
-      </li>
+      </div>
     );
   }
 }
 
-export default Bloglist;
+export default Likebloglist;
