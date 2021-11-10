@@ -6,3 +6,5 @@ class Login extends React.Component {
     return <div />;
   }
 }
+
+export default Login;
