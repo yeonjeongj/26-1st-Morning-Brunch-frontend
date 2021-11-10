@@ -8,7 +8,7 @@ class Articles extends React.Component {
   constructor() {
     super();
     this.state = {
-      articleLists: {},
+      articleLists: [],
       isLiked: false,
       likesNumber: '231',
       scrollbar: 0,
@@ -16,13 +16,11 @@ class Articles extends React.Component {
   }
 
   handleArticleMain = () => {
-    fetch('/data/articlesData.json', {
-      method: 'GET',
-    })
+    fetch('/data/articlesData.json')
       .then(res => res.json())
       .then(data => {
         this.setState({
-          articleLists: data,
+          articleLists: data.post,
         });
       });
   };
@@ -33,7 +31,7 @@ class Articles extends React.Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', !this.handleScroll);
+    window.removeEventListener('scroll', this.handleScroll);
   }
 
   handleScroll = () => {
@@ -52,33 +50,33 @@ class Articles extends React.Component {
 
   handleLikeNumber = () => {
     const { likesNumber, isLiked } = this.state;
+    const condition = isLiked === true;
+    const number = Number(likesNumber);
 
-    if (isLiked === false) {
-      this.setState({
-        likesNumber: Number(likesNumber) + 1,
-      });
-    } else if (isLiked === true) {
-      this.setState({
-        likesNumber: Number(likesNumber) - 1,
-      });
-    }
+    this.setState({
+      likesNumber: condition ? number - 1 : number + 1,
+    });
   };
 
   render() {
     const { articleLists, isLiked, likesNumber, scrollbar } = this.state;
+
     return (
       <div className="articles">
-        <div className="headerScroll " style={{ width: `${scrollbar}px` }} />
-        {articleLists.feeds && (
+        <div
+          className="headerScroll "
+          style={{ width: `${scrollbar * 1.3}px` }}
+        />
+        {articleLists && (
           <>
-            <DetailHeader articleLists={articleLists.feeds.feedsHeader} />
+            <DetailHeader articleLists={articleLists[0]} />
             <DetailText
-              articleLists={articleLists.feeds.feedsText}
+              articleLists={articleLists[0]}
               isLiked={isLiked}
               handleLiked={this.handleLiked}
               likesNumber={likesNumber}
             />
-            <DetailUser articleLists={articleLists.feeds.feedsUser} />
+            <DetailUser articleLists={articleLists[0]} />
           </>
         )}
       </div>

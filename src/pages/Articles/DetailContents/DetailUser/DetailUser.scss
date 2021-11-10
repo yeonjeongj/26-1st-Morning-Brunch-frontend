@@ -4,7 +4,7 @@
     background: #fbfbfb;
 
     .infoWrapper {
-      width: 700px;
+      width: 970px;
       margin: 0 auto;
       position: relative;
 
@@ -24,6 +24,12 @@
           color: #333;
           font-size: 1.5rem;
           margin-bottom: 1rem;
+        }
+
+        .tagBtn {
+          button {
+            margin: 0 8px 1rem 0;
+          }
         }
 
         .nickName {

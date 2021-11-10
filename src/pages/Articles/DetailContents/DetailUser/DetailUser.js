@@ -1,5 +1,6 @@
 import React from 'react';
 import './DetailUser.scss';
+import Button from '../../../../components/Button/Button';
 
 export class DetailUser extends React.Component {
   render() {
@@ -12,14 +13,20 @@ export class DetailUser extends React.Component {
               <div
                 className="userImg"
                 style={{
-                  backgroundImage: `url(${articleLists.userImg})`,
+                  backgroundImage: `url(${articleLists.author.profile_image.url})`,
                 }}
               />
               <div className="userInfo">
-                <h3>{articleLists.userName}</h3>
-                <p className="nickName">{articleLists.userNickName}</p>
+                <h3>{articleLists.author.name}</h3>
+                <div className="tagBtn">
+                  <Button text={articleLists.author.user_tag[0]} />
+                  <Button text={articleLists.author.user_tag[1]} />
+                  <Button text={articleLists.author.user_tag[2]} />
+                  <Button text={articleLists.author.user_tag[3]} />
+                  <Button text={articleLists.author.user_tag[4]} />
+                </div>
 
-                <p className="content">{articleLists.userInfo}</p>
+                <p className="content">{articleLists.author.introduction}</p>
               </div>
             </div>
           </article>

@@ -1,15 +1,11 @@
 import React from 'react';
 import './DetailText.scss';
+import { ICON_IMG } from './ICON_IMG';
 import Button from '../../../../components/Button/Button';
 
 export class DetailText extends React.Component {
   render() {
-    const like =
-      'https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678087-heart-1024.png';
-    const unLike =
-      'https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/heart-1024.png';
     const { articleLists, handleLiked, isLiked, likesNumber } = this.props;
-    let text = articleLists.text;
 
     return (
       <div className="detailText">
@@ -17,14 +13,14 @@ export class DetailText extends React.Component {
           <article className="mainText">
             <div
               className="textWrapper"
-              dangerouslySetInnerHTML={{ __html: text }}
+              dangerouslySetInnerHTML={{ __html: `${articleLists.content}` }}
             />
 
             <div className="buttonWrapper">
               <div className="tagBtn">
-                <Button text={articleLists.feedstag[0]} />
-                <Button text={articleLists.feedstag[1]} />
-                <Button text={articleLists.feedstag[2]} />
+                <Button text={articleLists.tags[0]} />
+                <Button text={articleLists.tags[1]} />
+                <Button text={articleLists.tags[2]} />
               </div>
 
               <div className="heartBtn">
@@ -35,7 +31,9 @@ export class DetailText extends React.Component {
                   className="icon"
                   onClick={handleLiked}
                   style={{
-                    backgroundImage: `url(${isLiked ? like : unLike})`,
+                    backgroundImage: `url(${
+                      isLiked ? `${ICON_IMG.like}` : `${ICON_IMG.unLike}`
+                    })`,
                   }}
                 />
               </div>

@@ -1,7 +1,7 @@
 .detailText {
   .mainText {
     .textWrapper {
-      width: 700px;
+      width: 970px;
       margin: 0 auto;
       padding: 8rem 0 5rem;
       font-size: 1.1rem;
@@ -22,7 +22,7 @@
   }
 
   .buttonWrapper {
-    width: 700px;
+    width: 970px;
     margin: 0 auto 8rem;
     display: flex;
     justify-content: space-between;
@@ -31,6 +31,7 @@
     .tagBtn {
       button {
         margin-right: 0.5rem;
+        padding: 10px 23px;
         transition: 0.3s;
         cursor: pointer;
       }

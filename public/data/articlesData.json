@@ -1,21 +1,38 @@
 {
-  "feeds": {
-    "feedsHeader": {
-      "mainName": "한국에서도 이런 브런치를!",
-      "mainImg": "https://images.unsplash.com/photo-1528207776546-365bb710ee93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
-      "mainNickName": "내가 가본 최고의 브런치 집",
-      "writerName": "소윤이지롱",
-      "writeDate": "2021.11.08"
-    },
-    "feedsText": {
-      "text": "<img src='https://i.ibb.co/MRPgCq2/Kakao-Talk-Photo-2021-11-06-18-12-01.jpg' alt='pancake' />한국에서도 브런치를 쉽게 즐길 수 있는 리틀넥에 다녀왔습니다.<br /> 평소 웨이팅이 길어, 마음속에 담아두기만 했던 가게였는데요.<br /> 브레이크타임이 끝나고 맞춰서 방문하니 웨이팅을 하지 않고 들어 갈 수 있었습니다!<br /> 우연인지 운명인지 기다리면서 앉고싶던 자리에 안내를 받아서 즐거운 식사를 할 수 있었습니다. <br />팬케이크(14,000원) + 고구마 프라이즈 (8,000원) + 부라따 샐러드(15,000원)<br />이것저것 먹고 싶은대로 하나씩 주문을 했습니다.<br /> 스테크에 함께 나오는 매쉬드 포테이토는 굉장히 부드러웠으며, 팬케이크의 촉촉함은 잊을 수 없는 맛이었습니다.<br />뉴욕까지 가는 빠른방법. 리틀넥 이었습니다.<br />주소:서울 용산구 한남대로27길 66</p>",
-      "feedstag": ["유럽", "서울", "맛집소개"]
-    },
-    "feedsUser": {
-      "userName": "소윤이지롱",
-      "userNickName": "블로거",
-      "userInfo": "맛집 좋아 공유 좋아 맛있는게 이세상에서 제일로 좋하앙",
-      "userImg": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=987&q=80"
+  "post": [
+    {
+      "cover_image": {
+        "url": "https://i.ibb.co/hDwtk7m/20190226-122330.jpg"
+      },
+      "title": "실크 노동자들의 주린 배를 위로해주던 든든한 브런치",
+      "sub_title": "프랑스 리옹식 샐러드",
+      "creat_time": "2021-11-08T11:01:01.604Z",
+      "content": "<div> 얼마나 유명하면 지역을 대표하는 요리로 샐러드가 꼽혔을까. 일반적으로 샐러드하면 식사에 곁들여지는 가볍게 먹는 음식이라고 생각하지만 리옹식 샐러드는 다르다. <br><br>\n<a href=\"https://ibb.co/Qrt1ZbK\"><img src=\"https://i.ibb.co/hDwtk7m/20190226-122330.jpg\" alt=\"20190226-122330\" border=\"0\" /></a>\n<br><br>\n 일반적으로 리옹식 샐러드는 새콤한 체리토마토와 올리브, 한 입 크기로 손질한 샐러드용 채소에 유자청을 베이스로 한 새콤달콤한 소스를 곁들인다. 또, 베이컨을 볶아 나온 기름에 올리브유를 넣고 그 기름에 크루통을 익혀 바삭함과 고소함을 추가한 뒤 두툼한 베이컨 혹은 햄을 올려준다. (사진 속에는 베이컨 대신 테린(Terrine)이 올라갔다.) 마지막으로 노른자가 온전히 살아있는 수란을 올려주면 완성이다. <br>\n 샐러드가 식탁 위로 올라오면 수란을 반으로 갈라 샛노란 노른자를 샐러드와 버무려 한 입, 베이컨을 썰어 또 한입. 이렇게 든든한 샐러드를 누가 사이드메뉴로 먹을까. 역시 미식을 추구하는 프랑스인들은 샐러드도 진심으로 대하는 듯 하다.</div>\n<br>\n<br>\n<div class = 'where'> 라 씨에트, 서울특별시 서초구 서래로 6길 6 </div>\n",
+      "tags": [
+        "프랑스",
+        "리옹",
+        "가정식",
+        "유자청소스",
+        "포치드에그",
+        "베이컨",
+        "테린",
+        "유럽식"
+      ],
+      "author": {
+        "name": "권개발",
+        "introduction": "민주적인 사다리타기",
+        "user_tag": [
+          "방문기록",
+          "프랑스",
+          "리뷰",
+          "비건",
+          "미식가",
+          "캠핑마니아"
+        ],
+        "profile_image": {
+          "url": "https://image.shutterstock.com/image-photo/young-business-man-working-home-600w-1654831870.jpg"
+        }
+      }
     }
-  }
+  ]
 }
