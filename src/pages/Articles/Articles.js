@@ -11,7 +11,7 @@ class Articles extends React.Component {
       articleLists: {},
       isLiked: false,
       likesNumber: '231',
-      scrollbar: false,
+      scrollbar: 0,
     };
   }
 
@@ -38,7 +38,7 @@ class Articles extends React.Component {
 
   handleScroll = () => {
     this.setState({
-      scrollbar: window.onscroll === 0 ? false : true,
+      scrollbar: window.scrollY,
     });
   };
 
@@ -65,11 +65,10 @@ class Articles extends React.Component {
   };
 
   render() {
-    const scroll = window.scrollY;
-    const { articleLists, isLiked, likesNumber } = this.state;
+    const { articleLists, isLiked, likesNumber, scrollbar } = this.state;
     return (
       <div className="articles">
-        <div className="headerScroll " style={{ width: `${scroll}px` }} />
+        <div className="headerScroll " style={{ width: `${scrollbar}px` }} />
         {articleLists.feeds && (
           <>
             <DetailHeader articleLists={articleLists.feeds.feedsHeader} />
