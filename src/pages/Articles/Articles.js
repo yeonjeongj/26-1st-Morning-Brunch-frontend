@@ -48,27 +48,33 @@ class Articles extends React.Component {
     this.setState({
       isLiked: !isLiked,
     });
+    this.handleLikeNumber();
   };
 
   handleLikeNumber = () => {
-    if (this.state.isLiked === true) {
+    // this.setState({
+    //   likesNumber: Number(this.state.likesNumber) ? +1 : -1,
+    // });
+
+    const { likesNumber, isLiked } = this.state;
+
+    if (isLiked === false) {
       this.setState({
-        likesNumber: Number(this.state.likesNumber) + 1,
+        likesNumber: Number(likesNumber) + 1,
       });
-    } else {
+    } else if (isLiked === true) {
       this.setState({
-        likesNumber: Number(this.state.likesNumber) - 2,
+        likesNumber: Number(likesNumber) - 1,
       });
     }
   };
 
   render() {
     const { articleLists, isLiked, likesNumber } = this.state;
-    console.log(this.state.likesNumber);
     return (
-      <>
+      <div className="articles">
         {articleLists.feeds && (
-          <div className="articles">
+          <>
             <DetailHeader articleLists={articleLists.feeds.feedsHeader} />
             <DetailText
               articleLists={articleLists.feeds.feedsText}
@@ -77,9 +83,9 @@ class Articles extends React.Component {
               likesNumber={likesNumber}
             />
             <DetailUser articleLists={articleLists.feeds.feedsUser} />
-          </div>
+          </>
         )}
-      </>
+      </div>
     );
   }
 }

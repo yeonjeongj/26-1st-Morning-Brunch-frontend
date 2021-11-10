@@ -1,49 +1,59 @@
-.mainText {
-  width: 700px;
-  margin: 0 auto;
-  padding: 8rem 0;
-  font-size: 1.1rem;
-  line-height: 1.5rem;
-  color: #333;
-
-  img {
-    width: 100%;
-    margin: 1rem 0;
-  }
-}
-.buttonWrapper {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-
-  .tagBtn {
-    button {
-      margin-right: 0.5rem;
-      transition: 0.3s;
-      cursor: pointer;
-    }
-  }
-
-  .heartBtn {
-    display: flex;
-
-    p {
-      color: #333;
+.detailText {
+  .mainText {
+    .textWrapper {
+      width: 700px;
+      margin: 0 auto;
+      padding: 8rem 0 5rem;
       font-size: 1.1rem;
-      line-height: 1.8rem;
-      margin-right: 0.5rem;
+      line-height: 2rem;
+      color: #333;
+
+      img {
+        width: 100%;
+        margin: 1rem 0;
+      }
+
+      ul {
+        li {
+          list-style: none;
+        }
+      }
+    }
+  }
+
+  .buttonWrapper {
+    width: 700px;
+    margin: 0 auto 8rem;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    .tagBtn {
+      button {
+        margin-right: 0.5rem;
+        transition: 0.3s;
+        cursor: pointer;
+      }
     }
 
-    .icon {
-      width: 30px;
-      height: 30px;
-      // background: url('https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/heart-1024.png')
-      //   no-repeat;
-      background-size: cover;
-      background-position: center;
-      transition: 0.3s;
-      cursor: pointer;
+    .heartBtn {
+      display: flex;
+
+      p {
+        color: #333;
+        font-size: 1.1rem;
+        line-height: 1.8rem;
+        margin-right: 0.5rem;
+      }
+
+      .icon {
+        width: 30px;
+        height: 30px;
+        background-size: cover;
+        background-position: center;
+        transition: 0.3s;
+        cursor: pointer;
+      }
     }
   }
 }

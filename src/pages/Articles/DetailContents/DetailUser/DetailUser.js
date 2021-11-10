@@ -5,7 +5,7 @@ export class DetailUser extends React.Component {
   render() {
     const { articleLists } = this.props;
     return (
-      <>
+      <div className="detailUser">
         {articleLists && (
           <article className="writerInfo">
             <div className="infoWrapper">
@@ -24,7 +24,7 @@ export class DetailUser extends React.Component {
             </div>
           </article>
         )}
-      </>
+      </div>
     );
   }
 }

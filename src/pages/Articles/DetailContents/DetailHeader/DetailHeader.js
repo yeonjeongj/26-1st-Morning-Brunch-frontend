@@ -5,7 +5,7 @@ export class DetailHeader extends React.Component {
   render() {
     const { articleLists } = this.props;
     return (
-      <>
+      <div className="detailHeader">
         {articleLists && (
           <main
             className="mainImg"
@@ -24,7 +24,7 @@ export class DetailHeader extends React.Component {
             </div>
           </main>
         )}
-      </>
+      </div>
     );
   }
 }
