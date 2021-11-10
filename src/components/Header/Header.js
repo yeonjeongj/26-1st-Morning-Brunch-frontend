@@ -1,10 +1,51 @@
-import React from 'react';
+import { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import './Header.scss';
 
-class Header extends React.Component {
+export class Header extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isActivate: false,
+    };
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll = e => {
+    this.setState({
+      isActivate: window.scrollY === 0 ? false : true,
+    });
+  };
+
+  goToMain = e => {
+    const { history } = this.props;
+    history.push('/main');
+  };
+
   render() {
-    return <div />;
+    const { handleClick, targetHamburger } = this.props;
+    const { isActivate } = this.state;
+    return (
+      <header className={`header ${isActivate ? 'activated' : null}`}>
+        <div className="toggleBtn" onClick={handleClick} ref={targetHamburger}>
+          <span />
+          <span />
+          <span />
+        </div>
+
+        <div className="logoWrapper" onClick={this.goToMain}>
+          <h2>morning & brunch</h2>
+        </div>
+      </header>
+    );
   }
 }
 
-export default Header;
+export default withRouter(Header);
