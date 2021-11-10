@@ -2,6 +2,7 @@ import React from 'react';
 import DetailHeader from './DetailContents/DetailHeader/DetailHeader';
 import DetailText from './DetailContents/DetailText/DetailText';
 import DetailUser from './DetailContents/DetailUser/DetailUser';
+import './Articles.scss';
 
 class Articles extends React.Component {
   constructor() {
@@ -10,22 +11,9 @@ class Articles extends React.Component {
       articleLists: {},
       isLiked: false,
       likesNumber: '231',
+      scrollbar: false,
     };
   }
-
-  // handleContents =()=> {
-  //   fetch(`${API}/users/${this.props.match.params.id}`)
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       this.setState({
-  //         articleLists: data,
-  //       });
-  //     });
-  // }
-
-  // componentDidMount() {
-  //   this.handleContents();
-  // }
 
   handleArticleMain = () => {
     fetch('/data/articlesData.json', {
@@ -41,7 +29,18 @@ class Articles extends React.Component {
 
   componentDidMount() {
     this.handleArticleMain();
+    window.addEventListener('scroll', this.handleScroll);
   }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', !this.handleScroll);
+  }
+
+  handleScroll = () => {
+    this.setState({
+      scrollbar: window.onscroll === 0 ? false : true,
+    });
+  };
 
   handleLiked = () => {
     const { isLiked } = this.state;
@@ -52,10 +51,6 @@ class Articles extends React.Component {
   };
 
   handleLikeNumber = () => {
-    // this.setState({
-    //   likesNumber: Number(this.state.likesNumber) ? +1 : -1,
-    // });
-
     const { likesNumber, isLiked } = this.state;
 
     if (isLiked === false) {
@@ -70,9 +65,11 @@ class Articles extends React.Component {
   };
 
   render() {
+    const scroll = window.scrollY;
     const { articleLists, isLiked, likesNumber } = this.state;
     return (
       <div className="articles">
+        <div className="headerScroll " style={{ width: `${scroll}px` }} />
         {articleLists.feeds && (
           <>
             <DetailHeader articleLists={articleLists.feeds.feedsHeader} />
