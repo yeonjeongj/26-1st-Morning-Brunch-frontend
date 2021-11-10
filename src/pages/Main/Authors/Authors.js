@@ -24,12 +24,14 @@ class Authors extends React.Component {
       );
   };
 
-  isBtnActive = (btnNum, keyword) => {
-    this.setState({ activeBtn: btnNum });
-
+  updateUsersData = keyword => {
     fetch(`${API}?keyword=${keyword}&limit=6`)
       .then(res => res.json())
       .then(res => this.setState({ usersData: res }));
+  };
+
+  isBtnActive = (btnNum, keyword) => {
+    this.setState({ activeBtn: btnNum }, () => this.updateUsersData(keyword));
   };
 
   linkToContent = value => {
@@ -50,44 +52,39 @@ class Authors extends React.Component {
         <span className="subtitle">모닝엔 브런치 추천 작가</span>
         <div className="authorKeywordBtns">
           {KEYWORD_BTN_DATA.map((data, idx) => {
+            const { text, btnNum } = data;
             return (
               <Button
                 key={idx}
-                text={data.text}
-                onClick={() =>
-                  this.isBtnActive(`${data.btnNum}`, `${data.text}`)
-                }
-                style={activeBtn === `${data.btnNum}` ? true : false}
+                text={text}
+                onClick={() => this.isBtnActive(`${btnNum}`, `${text}`)}
+                style={activeBtn === `${btnNum}` ? true : false}
               />
             );
           })}
         </div>
         <div className="authorWrapper">
           {usersData.map((author, idx) => {
+            const { image, author_name, author_job, author_intro, keyword } =
+              author;
             return (
               <div key={idx} className="authorCard">
-                <img alt="author" src={author.image} />
-                <span className="authorName">{author.author_name}</span>
-                <span className="authorJob">{author.author_job}</span>
-                <p>{author.author_intro}</p>
+                <img alt="author" src={image} />
+                <span className="authorName">{author_name}</span>
+                <span className="authorJob">{author_job}</span>
+                <p>{author_intro}</p>
                 <div className="authorKeywordBtns">
                   <Button
-                    text={author.keyword[0]}
-                    onClick={() =>
-                      this.linkToContent(author.keyword[0].post_id)
-                    }
+                    text={keyword[0]}
+                    onClick={() => this.linkToContent(keyword[0].post_id)}
                   />
                   <Button
-                    text={author.keyword[1]}
-                    onClick={() =>
-                      this.linkToContent(author.keyword[1].post_id)
-                    }
+                    text={keyword[1]}
+                    onClick={() => this.linkToContent(keyword[1].post_id)}
                   />
                   <Button
-                    text={author.keyword[2]}
-                    onClick={() =>
-                      this.linkToContent(author.keyword[2].post_id)
-                    }
+                    text={keyword[2]}
+                    onClick={() => this.linkToContent(keyword[2].post_id)}
                   />
                 </div>
               </div>

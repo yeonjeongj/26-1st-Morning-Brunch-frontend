@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 .footer {
   padding: 2rem 0 3rem;
   background: #000;
@@ -8,17 +10,16 @@
     margin: 0 auto;
 
     .footerUp {
+      @include flex(flex, row, space-between);
       padding-bottom: 2rem;
-      display: flex;
-      justify-content: space-between;
       border-bottom: 1px solid #999;
 
       .logoWrapper {
         h2 {
-          font-family: 'Tangerine', cursive;
           margin-bottom: 1rem;
-          font-size: 2.4rem;
           color: white;
+          font-family: 'Tangerine', cursive;
+          font-size: 2.4rem;
         }
 
         p {
@@ -27,26 +28,24 @@
         }
       }
 
-      ul {
-        list-style: none;
+      .pageList {
         display: flex;
+        padding-top: 9px;
 
         li {
           margin-left: 2rem;
-          font-size: 1.1rem;
           color: #999;
-          line-height: 2;
+          font-size: 0.9rem;
           font-weight: bold;
+          line-height: 2;
         }
       }
     }
     .footerDown {
+      @include flex(flex, row, space-between);
       margin-top: 2rem;
-      display: flex;
-      justify-content: space-between;
 
       ul {
-        list-style: none;
         display: flex;
 
         li {

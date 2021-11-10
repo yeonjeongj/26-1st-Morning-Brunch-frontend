@@ -2,46 +2,50 @@
 
 .nav {
   .popup {
+    position: fixed;
+    left: 0;
     width: 270px;
     height: 100vh;
     border-right: 1px solid #ddd;
-    position: fixed;
-    left: 0;
+    background-color: white;
     z-index: 99;
     transition: 0.3s ease-in;
 
     .userInfo {
-      padding: 5rem 0;
+      @include flex(flex, column, center, center);
+      height: 35%;
+      border-bottom: 1px solid #ddd;
       background: #f6f6f6;
       text-align: center;
-      border-bottom: 1px solid #ddd;
 
-      .userImg {
-        width: 80px;
-        height: 80px;
-        margin-bottom: 1rem;
-        background-size: cover;
-        background-position: center;
-        border-radius: 100%;
-        position: relative;
-        left: 50%;
-        transform: translate(-50%, 0);
-      }
+      .infoWrapper {
+        .userImg {
+          width: 80px;
+          height: 80px;
+          margin: 0 auto 1rem;
+          border-radius: 100%;
+          background-size: cover;
+          background-position: center;
+        }
 
-      h4 {
-        margin-bottom: 1rem;
-        font-weight: border;
-        color: black;
-      }
+        h4 {
+          margin-bottom: 1rem;
+          color: black;
+          font-weight: bolder;
+        }
 
-      p {
-        color: #999;
-        line-height: 1.1rem;
+        p {
+          width: 180px;
+          color: #999;
+          line-height: 1.1rem;
+        }
       }
     }
 
     .mainNav {
-      padding: 6rem 0;
+      @include flex(flex, column, auto, center);
+      height: 40%;
+      padding-top: 40px;
       text-align: center;
 
       div {
@@ -49,21 +53,18 @@
 
         a {
           display: block;
-          width: 100px;
           position: relative;
           left: 50%;
-          transform: translateX(-50%);
+          width: 100px;
           background: white;
+          transform: translateX(-50%);
           z-index: 99;
 
           &::after {
-            content: '';
             display: block;
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: -1;
             width: 0px;
             height: 1px;
             background: linear-gradient(
@@ -73,7 +74,10 @@
               #ffaa00 70%
             );
             opacity: 0.6;
+            content: '';
+            transform: translate(-50%, -50%);
             transition: all 0.1s ease-in-out;
+            z-index: -1;
           }
 
           &:hover::after {
@@ -82,8 +86,8 @@
 
           &:link,
           &:visited {
-            text-decoration: none;
             color: #333;
+            text-decoration: none;
             transition: 0.3s;
           }
 
@@ -96,47 +100,48 @@
       }
     }
 
-    .hotTopic {
-      width: 70%;
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%);
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid black;
-      cursor: pointer;
+    .buttonWrapper {
+      @include flex(flex, column, center, center);
+      height: 25%;
 
-      h4 {
-        width: 65%;
-        margin: 0 auto;
-        line-height: 1.5rem;
-        color: black;
-        font-size: 1.1rem;
-        font-family: 'Nanum Myeongjo', serif;
-      }
-    }
-
-    .settings {
-      width: 70%;
-      margin: 0 auto;
-      padding: 3rem 0;
-      display: flex;
-      justify-content: space-between;
-
-      button {
-        color: #999;
-        padding: 10px 23px;
-        transition: 0.3s;
+      .hotTopic {
+        width: 70%;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid black;
         cursor: pointer;
-        &:hover {
-          @include themeColor;
-          border-color: #ffaa00;
+
+        h4 {
+          width: 65%;
+          margin: 0 auto;
+          color: black;
+          font-family: 'Nanum Myeongjo', serif;
+          font-size: 1.1rem;
+          line-height: 1.5rem;
+          cursor: pointer;
+        }
+      }
+
+      .settings {
+        @include flex(flex, row, space-between);
+        width: 70%;
+        margin: 0 auto;
+        padding: 3rem 0;
+
+        button {
+          padding: 10px 23px;
+          color: #999;
+          transition: 0.3s;
+          cursor: pointer;
+
+          &:hover {
+            @include themeColor;
+          }
         }
       }
     }
   }
 
   .hide {
-    position: absolute;
     left: -300px;
   }
 }

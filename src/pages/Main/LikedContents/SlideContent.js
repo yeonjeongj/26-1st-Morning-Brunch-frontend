@@ -3,19 +3,20 @@ import { withRouter } from 'react-router-dom';
 
 class SlideContent extends React.Component {
   linkToContent = () => {
-    const { history, id } = this.props;
-    history.push(`/article/${id}`);
+    const { history } = this.props;
+    const { post_id } = this.props.slideContent;
+    history.push(`/article/${post_id}`);
   };
 
   render() {
-    const { backgroundImage, articleText, articleAuthor } = this.props;
+    const { title, author_name, cover_image } = this.props.slideContent;
 
     return (
       <div className="slideContent" onClick={this.linkToContent}>
-        <p className="articleText">{articleText}</p>
-        <p className="articleAuthor">by&nbsp;&nbsp;{articleAuthor}</p>
+        <p className="articleText">{title}</p>
+        <p className="articleAuthor">by&nbsp;&nbsp;{author_name}</p>
         <div
-          style={{ backgroundImage: `url(${backgroundImage})` }}
+          style={{ backgroundImage: `url(${cover_image})` }}
           className="articleImage"
         />
         <div className="cover" />

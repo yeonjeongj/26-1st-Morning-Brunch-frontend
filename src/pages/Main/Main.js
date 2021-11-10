@@ -9,13 +9,15 @@ class Main extends React.Component {
     super();
 
     this.state = {
-      keywordsData: [],
       slideContents: [],
+      keywordsData: [],
     };
   }
 
+  // 'http://10.58.1.93:8000/main/LikeContent?limit=14'
+
   handleSlideContents = () => {
-    fetch('http://10.58.1.93:8000/main/LikeContent?limit=14')
+    fetch('data/main/slideContents.json')
       .then(res => res.json())
       .then(data =>
         this.setState({
@@ -24,8 +26,10 @@ class Main extends React.Component {
       );
   };
 
+  // http://10.58.1.93:8000/main/keyword
+
   handleKeywordsData = () => {
-    fetch('http://10.58.1.93:8000/main/keyword')
+    fetch('data/main/keywordsData.json')
       .then(res => res.json())
       .then(data =>
         this.setState({
