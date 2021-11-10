@@ -6,13 +6,13 @@
   .articleWrapper {
     position: relative;
 
-    .slideArticles {
+    .slideDisplay {
       width: 970px;
       height: 500px;
       margin: 0 auto;
       transition: all 400ms ease-in-out;
 
-      .slideDisplay {
+      .slideArticles {
         @include grid(grid, repeat(24, 1fr), 0, repeat(6, 1fr));
         width: calc(970px * 4);
         height: 100%;
@@ -88,63 +88,62 @@
         }
 
         .slideContent {
+          @include flex(flex, column, center, center);
+          position: relative;
+          width: 100%;
+          height: 100%;
+          text-decoration: none;
           overflow: hidden;
 
-          a {
-            @include flex(flex, column, center, center);
-            position: relative;
+          .articleText,
+          .articleAuthor {
+            width: 250px;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            z-index: 10;
+            cursor: pointer;
+          }
+
+          .articleText {
+            @include themeFont;
+            font-size: 28px;
+            word-break: keep-all;
+          }
+
+          .articleAuthor {
+            margin-top: 15px;
+            font-size: 15px;
+          }
+
+          .articleImage,
+          .cover {
+            position: absolute;
             width: 100%;
             height: 100%;
-            text-decoration: none;
+          }
 
-            .articleText,
-            .articleAuthor {
-              width: 250px;
-              color: white;
-              text-align: center;
-              z-index: 10;
-              cursor: pointer;
-            }
+          .articleImage {
+            background-size: cover;
+            background-position: center;
+            transform: scale(1);
+            transition: transform 400ms ease-in-out;
+            z-index: 1;
+          }
 
-            .articleText {
-              @include themeFont;
-              font-size: 30px;
-              word-break: keep-all;
-            }
+          &:hover .articleImage {
+            transform: scale(1.1);
+          }
 
-            .articleAuthor {
-              margin-top: 15px;
-              font-size: 15px;
-            }
+          .cover {
+            background-color: rgba(0, 0, 0, 0.2);
+            transition: background-color 400ms ease-in-out;
+            z-index: 5;
+          }
 
-            .articleImage,
-            .cover {
-              position: absolute;
-              width: 100%;
-              height: 100%;
-            }
-
-            .articleImage {
-              background-size: cover;
-              background-position: center;
-              transform: scale(1);
-              transition: transform 400ms ease-in-out;
-              z-index: 1;
-            }
-
-            &:hover .articleImage {
-              transform: scale(1.1);
-            }
-
-            .cover {
-              transition: background-color 400ms ease-in-out;
-              background-color: rgba(0, 0, 0, 0.2);
-              z-index: 5;
-            }
-
-            &:hover .cover {
-              background-color: rgba(0, 0, 0, 0.4);
-            }
+          &:hover .cover {
+            background-color: rgba(0, 0, 0, 0.4);
+            cursor: pointer;
           }
         }
       }
@@ -167,7 +166,6 @@
 
       &.hidden {
         display: none;
-        cursor: default;
       }
     }
 

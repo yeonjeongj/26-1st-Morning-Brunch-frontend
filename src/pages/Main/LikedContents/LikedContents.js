@@ -65,20 +65,20 @@ class LikedContents extends React.Component {
       <section className="likedContents">
         <div className="articleWrapper">
           <div
-            className="slideArticles"
+            className="slideDisplay"
             style={{
               transform: `translateX(${slidePosition}px)`,
             }}
           >
-            <div className="slideDisplay">
-              {slideContents.map(content => {
+            <div className="slideArticles">
+              {slideContents.map((content, idx) => {
                 return (
                   <SlideContent
-                    key={content.id}
-                    backgroundImage={content.cover_image_url}
+                    key={idx}
+                    id={content.post_id}
+                    backgroundImage={content.cover_image}
                     articleText={content.title}
                     articleAuthor={content.author_name}
-                    contentUrl={content.content_url}
                   />
                 );
               })}
@@ -100,10 +100,10 @@ class LikedContents extends React.Component {
         </div>
 
         <ul className="contentsOrder">
-          {contentsOrderData.map((data, index) => {
+          {CONTENT_ORDER_DATA.map((data, idx) => {
             return (
               <li
-                key={index}
+                key={idx}
                 value={data.value}
                 onClick={this.moveToSlide}
                 className={
@@ -120,7 +120,7 @@ class LikedContents extends React.Component {
   }
 }
 
-const contentsOrderData = [
+const CONTENT_ORDER_DATA = [
   { value: '1', text: '01' },
   { value: '2', text: '02' },
   { value: '3', text: '03' },

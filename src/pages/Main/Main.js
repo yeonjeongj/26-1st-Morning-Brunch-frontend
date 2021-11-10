@@ -10,49 +10,37 @@ class Main extends React.Component {
 
     this.state = {
       keywordsData: [],
-      usersData: [],
       slideContents: [],
     };
   }
 
-  handleKeywordsData = () => {
-    fetch('data/main/keywordsData.json')
-      .then(res => res.json())
-      .then(data =>
-        this.setState({
-          keywordsData: data,
-        })
-      );
-  };
-
-  handleUsersData = () => {
-    fetch('data/main/usersData.json')
-      .then(res => res.json())
-      .then(data =>
-        this.setState({
-          usersData: data,
-        })
-      );
-  };
-
   handleSlideContents = () => {
-    fetch('data/main/slideContents.json')
+    fetch('http://10.58.1.93:8000/main/LikeContent')
       .then(res => res.json())
       .then(data =>
         this.setState({
-          slideContents: data,
+          slideContents: data.liked_contents_data,
+        })
+      );
+  };
+
+  handleKeywordsData = () => {
+    fetch('http://10.58.1.93:8000/main/keyword')
+      .then(res => res.json())
+      .then(data =>
+        this.setState({
+          keywordsData: data.keyword_data,
         })
       );
   };
 
   componentDidMount() {
-    this.handleKeywordsData();
-    this.handleUsersData();
     this.handleSlideContents();
+    this.handleKeywordsData();
   }
 
   render() {
-    const { keywordsData, usersData, slideContents } = this.state;
+    const { keywordsData, slideContents } = this.state;
 
     return (
       <div className="main">
@@ -64,7 +52,7 @@ class Main extends React.Component {
         </section>
         <LikedContents slideContents={slideContents} />
         <Keywords keywordsData={keywordsData} />
-        <Authors usersData={usersData} />
+        <Authors />
       </div>
     );
   }

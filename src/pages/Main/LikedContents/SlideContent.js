@@ -1,25 +1,27 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class SlideContent extends React.Component {
+  linkToContent = () => {
+    const { history, id } = this.props;
+    history.push(`/article/${id}`);
+  };
+
   render() {
-    const { backgroundImage, contentUrl, articleText, articleAuthor } =
-      this.props;
+    const { backgroundImage, articleText, articleAuthor } = this.props;
 
     return (
-      <div className="slideContent">
-        <Link to={contentUrl}>
-          <p className="articleText">{articleText}</p>
-          <p className="articleAuthor">by&nbsp;&nbsp;{articleAuthor}</p>
-          <div
-            style={{ backgroundImage: `url(${backgroundImage})` }}
-            className="articleImage"
-          />
-          <div className="cover" />
-        </Link>
+      <div className="slideContent" onClick={this.linkToContent}>
+        <p className="articleText">{articleText}</p>
+        <p className="articleAuthor">by&nbsp;&nbsp;{articleAuthor}</p>
+        <div
+          style={{ backgroundImage: `url(${backgroundImage})` }}
+          className="articleImage"
+        />
+        <div className="cover" />
       </div>
     );
   }
 }
 
-export default SlideContent;
+export default withRouter(SlideContent);
