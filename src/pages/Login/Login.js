@@ -1,6 +1,6 @@
 import React from 'react';
-import './Login.scss';
 import { Link } from 'react-router-dom';
+import './Login.scss';
 
 class Login extends React.Component {
   constructor() {
@@ -23,10 +23,10 @@ class Login extends React.Component {
     });
   };
 
-  handleOnClick = e => {
+  submitUserInfo = e => {
     const { idInput, pwInput } = this.state;
     e.preventDefault();
-    fetch('', {
+    fetch('http://10.58.4.223:8000/users/signin', {
       method: 'POST',
       body: JSON.stringify({
         email: idInput,
@@ -35,15 +35,10 @@ class Login extends React.Component {
     })
       .then(response => response.json())
       .then(response => {
-        if (response.message === 'SUCCESS') {
+        if (response.MESSAGE === 'SUCCESS') {
           this.goToMain();
         } else alert('아이디와 비밀번호를 다시 확인하세요');
       });
-  };
-
-  goToSignUp = () => {
-    const { history } = this.props;
-    history.push('/Signup');
   };
 
   render() {
@@ -51,51 +46,49 @@ class Login extends React.Component {
     const isActiveButton =
       idInput.includes('@') && idInput.includes('.') && pwInput.length >= 8;
     return (
-      <div className="login">
-        <main>
-          <div className="loginWrap">
-            <div className="bannerSlide">
-              <img src="images/login1.jpg" alt="login1" />
-            </div>
-            <div className="loginInner">
-              <h1>morning & brunch</h1>
-              <form className="loginForm">
-                <input
-                  input
-                  type="text"
-                  placeholder="이메일"
-                  name="idInput"
-                  onChange={this.updateInputs}
-                />
-                <input
-                  input
-                  type="password"
-                  placeholder="비밀번호"
-                  name="pwInput"
-                  onChange={this.updateInputs}
-                />
-                <button
-                  className={
-                    isActiveButton ? 'changeBtnColor' : 'normalBtnColor'
-                  }
-                  disabled={!isActiveButton}
-                  onClick={this.handleOnClick}
-                >
-                  로그인
-                </button>
-              </form>
-              <div className="underLoginForm">
-                <div>
-                  <Link to="/Signup">회원가입</Link>
-                </div>
-                <a href="google.com" className="lost">
-                  비밀번호 찾기
-                </a>
+      <main className="login">
+        <div className="loginWrap">
+          <div className="bannerSlide">
+            <img src="images/login1.jpg" alt="login1" />
+          </div>
+          <div className="loginInner">
+            <h1>morning & brunch</h1>
+            <form className="loginForm">
+              <input
+                input
+                type="text"
+                placeholder="이메일"
+                name="idInput"
+                onChange={this.updateInputs}
+              />
+              <input
+                input
+                type="password"
+                placeholder="비밀번호"
+                name="pwInput"
+                onChange={this.updateInputs}
+              />
+              <button
+                className={
+                  isActiveButton ? 'commonBtn ableBtn' : 'commonBtn disableBtn'
+                }
+                disabled={!isActiveButton}
+                onClick={this.submitUserInfo}
+              >
+                로그인
+              </button>
+            </form>
+            <div className="underLoginForm">
+              <div>
+                <Link to="/Signup">회원가입</Link>
               </div>
+              <a href="/find" className="lost">
+                비밀번호 찾기
+              </a>
             </div>
           </div>
-        </main>
-      </div>
+        </div>
+      </main>
     );
   }
 }
