@@ -15,7 +15,7 @@ class Main extends React.Component {
   }
 
   handleSlideContents = () => {
-    fetch('http://10.58.1.93:8000/main/LikeContent')
+    fetch('http://10.58.1.93:8000/main/LikeContent?limit=14')
       .then(res => res.json())
       .then(data =>
         this.setState({
