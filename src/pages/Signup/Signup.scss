@@ -1,1 +1,104 @@
 @import '../../styles/variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Tangerine&display=swap');
+
+.signUp {
+  @include flex(flex, 0, center, center);
+  height: 100%;
+  background-color: #ffffff;
+
+  .signUpWrap {
+    @include flex(flex, 0, center, center);
+
+    .signUpLogo {
+      @include flex(flex, 0, center, center);
+      width: 440px;
+      height: 500px;
+      padding: 40px;
+      border: 1px solid lightgrey;
+      border-right: none;
+    }
+
+    .signUpInner {
+      position: relative;
+      width: 440px;
+      height: 500px;
+      padding: 40px;
+      border: 1px solid lightgrey;
+
+      .signUpForm {
+        display: flex;
+        flex-direction: column;
+
+        .inputDiv {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-bottom: 1px solid lightgrey;
+        }
+
+        .check {
+          width: 20px;
+          height: 20px;
+        }
+
+        input {
+          height: 40px;
+          width: 358px;
+          border: none;
+          outline: none;
+          font-size: 15px;
+        }
+
+        #authorName {
+          margin-top: 30px;
+          border-bottom: 1px solid lightgrey;
+        }
+
+        #authorJob {
+          border-bottom: 1px solid lightgrey;
+        }
+
+        #authorIntro {
+          height: 80px;
+          margin-top: 30px;
+          padding: 5px;
+          border: 1px solid lightgrey;
+          font-size: 15px;
+          resize: none;
+          outline: none;
+        }
+
+        .commonBtn {
+          height: 40px;
+          margin: 35px 0;
+          border: none;
+          color: white;
+          background-color: #ffaa00;
+          font-size: 16px;
+        }
+
+        .ableBtn {
+          opacity: 0.8;
+          cursor: pointer;
+        }
+
+        .disableBtn {
+          opacity: 0.5;
+          cursor: default;
+        }
+      }
+
+      .underSignUpForm {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    h1 {
+      margin: 0 0 30px;
+      font-family: 'Tangerine', cursive;
+      font-size: 60px;
+      text-align: center;
+    }
+  }
+}
