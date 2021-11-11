@@ -3,6 +3,7 @@ import DetailHeader from './DetailContents/DetailHeader/DetailHeader';
 import DetailText from './DetailContents/DetailText/DetailText';
 import DetailUser from './DetailContents/DetailUser/DetailUser';
 import './Articles.scss';
+import Nav from '../../components/Nav/Nav';
 
 class Articles extends React.Component {
   constructor() {
@@ -62,24 +63,28 @@ class Articles extends React.Component {
     const { articleLists, isLiked, likesNumber, scrollbar } = this.state;
 
     return (
-      <div className="articles">
-        <div
-          className="headerScroll "
-          style={{ width: `${scrollbar * 1.3}px` }}
-        />
-        {articleLists && (
-          <>
-            <DetailHeader articleLists={articleLists[0]} />
-            <DetailText
-              articleLists={articleLists[0]}
-              isLiked={isLiked}
-              handleLiked={this.handleLiked}
-              likesNumber={likesNumber}
-            />
-            <DetailUser articleLists={articleLists[0]} />
-          </>
-        )}
-      </div>
+      <>
+        <Nav />
+
+        <div className="articles">
+          <div
+            className="headerScroll "
+            style={{ width: `${scrollbar * 1.3}px` }}
+          />
+          {articleLists && (
+            <>
+              <DetailHeader articleLists={articleLists[0]} />
+              <DetailText
+                articleLists={articleLists[0]}
+                isLiked={isLiked}
+                handleLiked={this.handleLiked}
+                likesNumber={likesNumber}
+              />
+              <DetailUser articleLists={articleLists[0]} />
+            </>
+          )}
+        </div>
+      </>
     );
   }
 }
