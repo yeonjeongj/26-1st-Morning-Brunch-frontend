@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+// import {API} from '../../config';
 import Button from '../Button/Button';
 import Header from '../Header/Header';
 import './Nav.scss';
@@ -26,7 +27,13 @@ class Nav extends React.Component {
 
   moveToContent = link => {
     const { history } = this.props;
-    history.push(`${link}`);
+
+    if (link === '/login') {
+      localStorage.removeItem('token');
+      history.push(`${link}`);
+    } else {
+      history.push(`${link}`);
+    }
   };
 
   handleClickOutside = event => {
@@ -83,23 +90,23 @@ class Nav extends React.Component {
           </div>
           <div className="mainNav">
             <div>
-              <Link to="/main">브런치 홈</Link>
+              <Link to="/main" onClick={this.handleClickOutside}>
+                브런치 홈
+              </Link>
             </div>
             <div>
-              <Link to="/mypage">내 브런치</Link>
+              <Link to="/mypage" onClick={this.handleClickOutside}>
+                내 브런치
+              </Link>
             </div>
           </div>
           <div className="buttonWrapper">
-            <div
-              className="hotTopic"
-              onClick={() => {
-                this.moveToContent('/articles');
-              }}
-            >
-              <h4>
-                지금-핫한 <br />
-                게시물 보러가기
-              </h4>
+            <div className="hotTopic">
+              <a href="http://wechicken.me/" target="_blank" rel="noreferrer">
+                <h4>
+                  지금-핫한 <br /> 치킨집 보러가기
+                </h4>
+              </a>
             </div>
             <div className="settings">
               <Button

@@ -7,15 +7,10 @@ import Main from './pages/Main/Main';
 import Articles from './pages/Articles/Articles';
 import Mypage from './pages/Mypage/Mypage';
 
-//공통 컴포넌트
-import Nav from './components/Nav/Nav';
-import Footer from './components/Footer/Footer';
-
 export class Routes extends React.Component {
   render() {
     return (
       <Router>
-        <Nav />
         <Switch>
           <Route exact path="/" component={Login} />
           <Route exact path="/signup" component={Signup} />
@@ -23,7 +18,6 @@ export class Routes extends React.Component {
           <Route exact path="/articles/:id" component={Articles} />
           <Route exact path="/mypage" component={Mypage} />
         </Switch>
-        <Footer />
       </Router>
     );
   }

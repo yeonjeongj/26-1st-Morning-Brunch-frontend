@@ -22,7 +22,7 @@
       word-break: keep-all;
 
       &:hover {
-        @include themeColor;
+        @include theme('true', 'true');
       }
     }
   }

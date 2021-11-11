@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { API } from '../../config';
 import './Login.scss';
 
 class Login extends React.Component {
@@ -25,9 +26,9 @@ class Login extends React.Component {
 
   submitUserInfo = e => {
     const { idInput, pwInput } = this.state;
-
     e.preventDefault();
-    fetch('http://10.58.4.223:8000/users/signin', {
+
+    fetch(`${API}/users/signin`, {
       method: 'POST',
       body: JSON.stringify({
         email: idInput,
@@ -37,7 +38,8 @@ class Login extends React.Component {
       .then(response => response.json())
       .then(response => {
         if (response.MESSAGE === 'SUCCESS') {
-          this.goToMain();
+          localStorage.setItem('token', response.access_token);
+          return this.goToMain();
         } else alert('아이디와 비밀번호를 다시 확인하세요');
       });
   };
@@ -83,10 +85,7 @@ class Login extends React.Component {
               </button>
             </form>
             <div className="underLoginForm">
-              <Link to="/Signup">회원가입</Link>
-              <Link to="/find" className="lost">
-                비밀번호 찾기
-              </Link>
+              <Link to="/Signup">아직 회원이 아니신가요?</Link>
             </div>
           </div>
         </div>

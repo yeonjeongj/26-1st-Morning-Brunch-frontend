@@ -1,4 +1,5 @@
 import React from 'react';
+import { API } from '../../config';
 import './Signup.scss';
 
 class Signup extends React.Component {
@@ -36,7 +37,7 @@ class Signup extends React.Component {
     } = this.state;
 
     e.preventDefault();
-    fetch('http://10.58.4.223:8000/users/signup', {
+    fetch(`${API}/users/signup`, {
       method: 'POST',
       body: JSON.stringify({
         email: idInput,
@@ -76,7 +77,6 @@ class Signup extends React.Component {
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
     const emailCheck = emailRegex.test(idInput);
-
     const pwCheck = passwordRegex.test(pwInput);
 
     return (

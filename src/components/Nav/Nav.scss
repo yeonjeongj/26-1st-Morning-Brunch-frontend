@@ -93,7 +93,7 @@
 
           &:hover,
           &:active {
-            color: #ffaa00;
+            @include theme('true');
             cursor: pointer;
           }
         }
@@ -110,14 +110,18 @@
         border-bottom: 2px solid black;
         cursor: pointer;
 
-        h4 {
-          width: 65%;
-          margin: 0 auto;
-          color: black;
-          font-family: 'Nanum Myeongjo', serif;
-          font-size: 1.1rem;
-          line-height: 1.5rem;
-          cursor: pointer;
+        a {
+          text-decoration: none;
+
+          h4 {
+            width: 65%;
+            margin: 0 auto;
+            color: black;
+            font-family: 'Nanum Myeongjo', serif;
+            font-size: 1.1rem;
+            line-height: 1.5rem;
+            cursor: pointer;
+          }
         }
       }
 
@@ -134,7 +138,7 @@
           cursor: pointer;
 
           &:hover {
-            @include themeColor;
+            @include theme('true', 'true');
           }
         }
       }
