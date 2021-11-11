@@ -1,0 +1,80 @@
+.likeInner {
+  .likePost {
+    width: 970px;
+    margin: 4rem auto;
+    font-weight: bold;
+  }
+
+  .likeBlog {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 2fr 2fr;
+    width: 970px;
+    margin: 3rem auto;
+
+    .blogList {
+      list-style: none;
+      position: relative;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid lightgrey;
+      width: 450px;
+      height: 140px;
+      margin-right: 60px;
+      padding: 20px 0;
+      cursor: pointer;
+
+      .post {
+        position: relative;
+        width: 300px;
+        height: 100px;
+        margin: 0 0 10px 0;
+
+        .title {
+          font-size: 20px;
+        }
+
+        .wrapContent {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          max-height: 43px;
+          padding-top: 10px;
+          text-overflow: hidden;
+          overflow: hidden;
+
+          .subTitle {
+            color: grey;
+            font-size: 14px;
+          }
+
+          .icoBar {
+            margin: 0 8px;
+            color: grey;
+            font-size: 12px;
+          }
+
+          .articleContent {
+            color: grey;
+            font-size: 14px;
+          }
+        }
+
+        .writer {
+          position: absolute;
+          bottom: 0;
+          color: grey;
+          font-size: 12px;
+        }
+      }
+    }
+
+    .coverImg {
+      position: absolute;
+      right: 0;
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+    }
+  }
+}
