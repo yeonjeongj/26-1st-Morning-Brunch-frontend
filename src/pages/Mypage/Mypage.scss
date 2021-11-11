@@ -1,1 +1,92 @@
 @import '../../styles/variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Tangerine&display=swap');
+
+.myPage {
+  main {
+    .myPageCover {
+      background-color: #f8f8f8;
+      height: 320px;
+    }
+    .myPageWrap {
+      display: flex;
+      align-items: center;
+      margin: auto;
+      width: 970px;
+      position: relative;
+
+      .myImg {
+        position: absolute;
+        right: 0;
+        top: -25%;
+        .thumb {
+          object-fit: cover;
+          border-radius: 100%;
+          width: 100px;
+          height: 100px;
+        }
+      }
+    }
+    .myProfile {
+      .myUser {
+        font-weight: bold;
+        font-size: 30px;
+        padding: 20px 0 10px 0;
+      }
+      .myUserIntro {
+        color: grey;
+      }
+      dl {
+        padding-top: 30px;
+        width: 700px;
+
+        dd {
+          display: flex;
+          flex-direction: column;
+          float: left;
+          margin-right: 40px;
+
+          em {
+            font-size: 12px;
+            font-style: normal;
+            color: grey;
+            margin-bottom: 5px;
+          }
+          span {
+            font-size: 20px;
+            color: grey;
+          }
+        }
+        .btnMore {
+          display: flex;
+          align-items: center;
+          position: absolute;
+          right: 0;
+
+          .more {
+            width: 30px;
+            height: 30px;
+          }
+        }
+      }
+    }
+  }
+  .blogLike {
+    @include flex(flex, 0, center, center);
+    margin: 4rem 0;
+    button {
+      border: none;
+      background-color: white;
+      font-size: 20px;
+      margin: 3rem 1rem;
+      cursor: pointer;
+    }
+    .activeMyBlogBtn,
+    .activeLikeBlogBtn {
+      color: #ffaa00;
+      border-bottom: 1px solid #ffaa00;
+    }
+  }
+  .myBlog {
+    @include flex(flex, 0, center, center);
+  }
+}
