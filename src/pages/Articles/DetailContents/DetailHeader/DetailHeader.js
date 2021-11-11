@@ -4,6 +4,7 @@ import './DetailHeader.scss';
 export class DetailHeader extends React.Component {
   render() {
     const { articleLists } = this.props;
+
     return (
       <div className="detailHeader">
         {articleLists && (

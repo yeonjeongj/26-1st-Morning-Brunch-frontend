@@ -5,7 +5,7 @@ class SlideContent extends React.Component {
   linkToContent = () => {
     const { history } = this.props;
     const { post_id } = this.props.slideContent;
-    history.push(`/article/${post_id}`);
+    history.push(`/articles/${post_id}`);
   };
 
   render() {

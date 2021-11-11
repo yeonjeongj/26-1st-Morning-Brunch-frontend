@@ -1,39 +1,34 @@
+@import '../../../../styles/variables.scss';
+
 .detailText {
   .mainText {
     .textWrapper {
       width: 970px;
       margin: 0 auto;
       padding: 8rem 0 5rem;
+      color: #333;
       font-size: 1.1rem;
       line-height: 2rem;
-      color: #333;
+      word-break: keep-all;
 
       img {
         width: 100%;
         margin: 1rem 0;
       }
-
-      ul {
-        li {
-          list-style: none;
-        }
-      }
     }
   }
 
   .buttonWrapper {
+    @include flex(flex, row, space-between);
+    position: relative;
     width: 970px;
     margin: 0 auto 8rem;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
 
     .tagBtn {
       button {
         margin-right: 0.5rem;
         padding: 10px 23px;
         transition: 0.3s;
-        cursor: pointer;
       }
     }
 
@@ -41,10 +36,10 @@
       display: flex;
 
       p {
+        margin-right: 0.5rem;
         color: #333;
         font-size: 1.1rem;
         line-height: 1.8rem;
-        margin-right: 0.5rem;
       }
 
       .icon {

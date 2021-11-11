@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-// import {API} from '../../config';
+import { API } from '../../config';
 import Button from '../Button/Button';
 import Header from '../Header/Header';
 import './Nav.scss';
@@ -10,17 +10,17 @@ class Nav extends React.Component {
     super();
     this.state = {
       isHamburgerClicked: false,
-      userLists: {},
+      userLists: [],
     };
     this.hamburgerRef = React.createRef();
   }
 
   handleUserData() {
-    fetch('/data/userData.json')
+    fetch(`${API}/posts/users/1`)
       .then(res => res.json())
       .then(data =>
         this.setState({
-          userLists: data,
+          userLists: data.user,
         })
       );
   }
@@ -63,7 +63,6 @@ class Nav extends React.Component {
 
   render() {
     const { isHamburgerClicked, userLists } = this.state;
-    const { userImg, userNickName, content } = userLists;
 
     return (
       <nav className="nav">
@@ -76,18 +75,20 @@ class Nav extends React.Component {
           onMouseDown={this.handleNavStop}
           id="slideNav"
         >
-          <div className="userInfo">
-            <div className="infoWrapper">
-              <div
-                className="userImg"
-                style={{
-                  backgroundImage: `url(${userImg})`,
-                }}
-              />
-              <h4>{userNickName}</h4>
-              <p>{content}</p>
+          {userLists.length > 0 && (
+            <div className="userInfo">
+              <div className="infoWrapper">
+                <div
+                  className="userImg"
+                  style={{
+                    backgroundImage: `url(${userLists[0].profile_image.url})`,
+                  }}
+                />
+                <h4>{userLists[0].name}</h4>
+                <p>{userLists[0].introdution}</p>
+              </div>
             </div>
-          </div>
+          )}
           <div className="mainNav">
             <div>
               <Link to="/main" onClick={this.handleClickOutside}>

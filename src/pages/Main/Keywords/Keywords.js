@@ -5,7 +5,7 @@ import './Keywords.scss';
 class Keywords extends React.Component {
   linkToContent = value => {
     const { history } = this.props;
-    history.push(`/article/${value}`);
+    history.push(`/articles/${value}`);
   };
 
   render() {

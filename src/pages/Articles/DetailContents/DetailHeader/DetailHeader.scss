@@ -1,10 +1,12 @@
+@import '../../../../styles/variables.scss';
+
 .detailHeader {
   .mainImg {
-    height: 550px;
+    position: relative;
+    height: 600px;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    position: relative;
 
     .mainCover {
       width: 100%;
@@ -13,41 +15,42 @@
     }
 
     .mainName {
-      width: 970px;
       position: absolute;
       bottom: 5rem;
       left: 50%;
+      width: 970px;
       transform: translateX(-50%);
 
       h1 {
         margin-bottom: 1rem;
-        font-family: 'Nanum Myeongjo';
+        color: white;
+        @include themeFont;
         font-size: 3.8rem;
         line-height: 4.5rem;
-        color: white;
+        word-break: keep-all;
       }
 
       .intro {
-        font-size: 1.3rem;
         margin-bottom: 3rem;
         color: white;
+        font-size: 1.2rem;
       }
 
       .date {
-        font-size: 0.9rem;
         color: white;
+        font-size: 0.9rem;
 
         span {
           color: white;
 
           &::before {
-            content: '·';
             padding: 0 0.5rem;
+            content: '·';
           }
 
           &::after {
-            content: '';
             padding: 0 0.5rem;
+            content: '';
           }
         }
       }

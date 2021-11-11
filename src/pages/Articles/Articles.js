@@ -1,4 +1,7 @@
 import React from 'react';
+// import {API} from '../../config';
+import Nav from '../../components/Nav/Nav';
+import Footer from '../../components/Footer/Footer';
 import DetailHeader from './DetailContents/DetailHeader/DetailHeader';
 import DetailText from './DetailContents/DetailText/DetailText';
 import DetailUser from './DetailContents/DetailUser/DetailUser';
@@ -14,6 +17,8 @@ class Articles extends React.Component {
       scrollbar: 0,
     };
   }
+
+  // '${API}/posts/${this.props.match.params.id}'
 
   handleArticleMain = () => {
     fetch('/data/articlesData.json')
@@ -62,24 +67,28 @@ class Articles extends React.Component {
     const { articleLists, isLiked, likesNumber, scrollbar } = this.state;
 
     return (
-      <div className="articles">
-        <div
-          className="headerScroll "
-          style={{ width: `${scrollbar * 1.3}px` }}
-        />
-        {articleLists && (
-          <>
-            <DetailHeader articleLists={articleLists[0]} />
-            <DetailText
-              articleLists={articleLists[0]}
-              isLiked={isLiked}
-              handleLiked={this.handleLiked}
-              likesNumber={likesNumber}
-            />
-            <DetailUser articleLists={articleLists[0]} />
-          </>
-        )}
-      </div>
+      <>
+        <Nav />
+        <div className="articles">
+          <div
+            className="headerScroll "
+            style={{ width: `${scrollbar * 1.3}px` }}
+          />
+          {articleLists && (
+            <>
+              <DetailHeader articleLists={articleLists[0]} />
+              <DetailText
+                articleLists={articleLists[0]}
+                isLiked={isLiked}
+                handleLiked={this.handleLiked}
+                likesNumber={likesNumber}
+              />
+              <DetailUser articleLists={articleLists[0]} />
+            </>
+          )}
+        </div>
+        <Footer />
+      </>
     );
   }
 }

@@ -5,6 +5,7 @@ import Button from '../../../../components/Button/Button';
 export class DetailUser extends React.Component {
   render() {
     const { articleLists } = this.props;
+
     return (
       <div className="detailUser">
         {articleLists && (

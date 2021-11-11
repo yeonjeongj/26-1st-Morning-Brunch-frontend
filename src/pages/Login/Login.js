@@ -14,7 +14,7 @@ class Login extends React.Component {
 
   goToMain = () => {
     const { history } = this.props;
-    history.push('/Main');
+    history.push('/main');
   };
 
   updateInputs = e => {
@@ -85,7 +85,7 @@ class Login extends React.Component {
               </button>
             </form>
             <div className="underLoginForm">
-              <Link to="/Signup">아직 회원이 아니신가요?</Link>
+              <Link to="/signup">아직 회원이 아니신가요?</Link>
             </div>
           </div>
         </div>
