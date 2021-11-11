@@ -21,7 +21,9 @@ class Articles extends React.Component {
   // '${API}/posts/${this.props.match.params.id}'
 
   handleArticleMain = () => {
-    fetch('/data/articlesData.json')
+    fetch('/data/articlesData.json', {
+      headers: { Authorization: localStorage.getItem('token') },
+    })
       .then(res => res.json())
       .then(data => {
         this.setState({

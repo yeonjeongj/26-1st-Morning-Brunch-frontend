@@ -15,7 +15,7 @@ class Authors extends React.Component {
   }
 
   handleUsersData = () => {
-    fetch(`${API}/posts/authors?tag='비건'&limit=6`)
+    fetch(`${API}/posts/authors?tag=비건&limit=6`)
       .then(res => res.json())
       .then(data =>
         this.setState({
@@ -27,7 +27,7 @@ class Authors extends React.Component {
   updateUsersData = keyword => {
     fetch(`${API}/posts/authors?tag=${keyword}&limit=6`)
       .then(res => res.json())
-      .then(res => this.setState({ usersData: res }));
+      .then(res => this.setState({ usersData: res.data }));
   };
 
   isBtnActive = (btnNum, keyword) => {
