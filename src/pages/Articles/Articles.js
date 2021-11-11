@@ -3,7 +3,6 @@ import DetailHeader from './DetailContents/DetailHeader/DetailHeader';
 import DetailText from './DetailContents/DetailText/DetailText';
 import DetailUser from './DetailContents/DetailUser/DetailUser';
 import './Articles.scss';
-import Nav from '../../components/Nav/Nav';
 
 class Articles extends React.Component {
   constructor() {
