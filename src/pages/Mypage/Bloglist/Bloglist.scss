@@ -9,6 +9,7 @@
     height: 180px;
     margin: 0;
     padding: 20px 0;
+    cursor: pointer;
 
     .post {
       width: 540px;
@@ -22,23 +23,36 @@
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: hidden;
         max-height: 43px;
         padding-top: 10px;
+        text-overflow: hidden;
+        overflow: hidden;
 
         .subTitle {
-          font-size: 14px;
           color: grey;
+          font-size: 14px;
         }
 
         .icoBar {
+          color: grey;
           margin: 0 8px;
           font-size: 12px;
-          color: grey;
         }
 
         .articleContent {
+          p,
+          ul,
+          li,
+          div {
+            display: inline;
+          }
+
+          img,
+          br,
+          a,
+          &nbsp {
+            display: none;
+          }
           font-size: 14px;
           color: grey;
         }
@@ -49,8 +63,8 @@
   .coverImg {
     position: absolute;
     right: 0;
-    object-fit: cover;
     width: 120px;
     height: 120px;
+    object-fit: cover;
   }
 }

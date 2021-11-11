@@ -1,8 +1,7 @@
 .likeInner {
   .recentPost {
-    width: 960px;
-    height: 30px;
-    margin: 20px auto;
+    width: 970px;
+    margin: 4rem auto;
     font-weight: bold;
   }
 
@@ -10,8 +9,8 @@
     display: grid;
     grid-template-columns: 2fr 2fr;
     align-items: center;
-    width: 960px;
-    margin: 0 auto;
+    width: 970px;
+    margin: 4rem auto 8rem;
 
     .blogList {
       position: relative;
@@ -23,6 +22,7 @@
       padding: 20px 0;
       border-bottom: 1px solid lightgrey;
       list-style: none;
+      cursor: pointer;
 
       .post {
         position: relative;

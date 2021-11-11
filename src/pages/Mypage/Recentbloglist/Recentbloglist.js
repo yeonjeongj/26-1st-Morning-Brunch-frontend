@@ -1,26 +1,46 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import './Recentbloglist.scss';
 
 class Recentbloglist extends Component {
+  goToArticle = value => {
+    const { history } = this.props;
+    history.push(`/article/${value}`);
+  };
   render() {
-    const { title, subtitle, articlecontent, img, username } = this.props;
+    const { recentBlogList } = this.props;
+
     return (
-      <div className="blogList">
-        <div className="post">
-          <strong className="title">{title}</strong>
-          <div className="wrapContent">
-            <span className="subTitle">{subtitle}</span>
-            <span className="icoBar">|</span>
-            <span className="articleContent">{articlecontent}</span>
-          </div>
-          <div className="writer">
-            <i>by</i>&nbsp;&nbsp;{username}
-          </div>
-        </div>
-        <img className="coverImg" src={img} alt="coverimg" />
-      </div>
+      <>
+        {recentBlogList.map((recent, idx) => {
+          return (
+            <div
+              key={idx}
+              className="blogList"
+              onClick={() => {
+                this.goToArticle(`${recent.id}`);
+              }}
+            >
+              <div className="post">
+                <strong className="title">{recent.title}</strong>
+                <div className="wrapContent">
+                  <span className="subTitle">{recent.subTitle}</span>
+                  <span className="icoBar">|</span>
+                  <span className="articleContent">
+                    {recent.articleContent}
+                  </span>
+                </div>
+                <div className="writer">
+                  <i>by</i>&nbsp;&nbsp;{recent.userName}
+                </div>
+              </div>
+              <img className="coverImg" src={recent.img} alt="coverimg" />
+            </div>
+          );
+        })}
+      </>
     );
   }
 }
 
-export default Recentbloglist;
+export default withRouter(Recentbloglist);

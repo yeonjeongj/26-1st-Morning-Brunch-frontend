@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Button from '../../components/Button/Button';
 import Bloglist from './Bloglist/Bloglist';
 import Likebloglist from './Likebloglist/Likebloglist';
 import Recentbloglist from './Recentbloglist/Recentbloglist';
+import Button from '../../components/Button/Button';
+import { API } from '../../../config';
 import './Mypage.scss';
 
 class Mypage extends Component {
@@ -13,7 +14,7 @@ class Mypage extends Component {
       myBlogList: [],
       likeBlogList: [],
       recentBlogList: [],
-      userInfo: {},
+      userInfo: [],
     };
   }
   openMyBlog = () => {
@@ -21,6 +22,7 @@ class Mypage extends Component {
       openMyBlog: true,
     });
   };
+
   openLikeBlog = () => {
     this.setState({
       openMyBlog: false,
@@ -28,11 +30,11 @@ class Mypage extends Component {
   };
 
   handleUserData = () => {
-    fetch('./data/myinfo.json')
+    fetch(`${API}/posts/user/5`)
       .then(res => res.json())
       .then(data =>
         this.setState({
-          userInfo: data,
+          userInfo: data.user,
         })
       );
   };
@@ -40,11 +42,11 @@ class Mypage extends Component {
   componentDidMount() {
     this.handleUserData();
 
-    fetch('./data/blogmock.json')
+    fetch(`${API}/posts/user/5`)
       .then(res => res.json())
       .then(data => {
         this.setState({
-          myBlogList: data,
+          myBlogList: data.user[0].post,
         });
       });
     fetch('./data/likeblogmock.json')
@@ -66,35 +68,43 @@ class Mypage extends Component {
   render() {
     const { openMyBlog, myBlogList, likeBlogList, recentBlogList, userInfo } =
       this.state;
-    const { userName, userIntro, userImg } = userInfo;
-
     return (
       <div className="myPage">
         <main>
           <div className="myPageCover" />
-          <div className="myPageWrap">
-            <div className="myImg">
-              <img className="thumb" src={userImg} alt="thumb" />
+          {userInfo.length > 0 && (
+            <div className="myPageWrap">
+              <div className="myImg">
+                <img
+                  className="thumb"
+                  src={userInfo[0].profile_image.url}
+                  alt="thumb"
+                />
+              </div>
+              <div className="myProfile">
+                <div className="myUser">{userInfo[0].name}</div>
+                <div className="myUserIntro">{userInfo[0].introduction}</div>
+                <dl className="follower">
+                  <dd>
+                    <em>구독자</em>
+                    <span>0</span>
+                  </dd>
+                  <dd>
+                    <em>관심작가</em>
+                    <span>1</span>
+                  </dd>
+                  <div className="btnMore">
+                    <Button text="글쓰기" style={true} />
+                    <img
+                      className="more"
+                      src="./images/mymore.png"
+                      alt="more"
+                    />
+                  </div>
+                </dl>
+              </div>
             </div>
-            <div className="myProfile">
-              <div className="myUser">{userName}</div>
-              <div className="myUserIntro">{userIntro}</div>
-              <dl className="follower">
-                <dd>
-                  <em>구독자</em>
-                  <span>0</span>
-                </dd>
-                <dd>
-                  <em>관심작가</em>
-                  <span>1</span>
-                </dd>
-                <div className="btnMore">
-                  <Button text="글쓰기" style={true} />
-                  <img className="more" src="./images/mymore.png" alt="more" />
-                </div>
-              </dl>
-            </div>
-          </div>
+          )}
         </main>
         <div className="blogLike">
           <button
@@ -113,50 +123,18 @@ class Mypage extends Component {
         {openMyBlog ? (
           <div className="myBlog">
             <ul>
-              {myBlogList.map(blog => {
-                return (
-                  <Bloglist
-                    key={blog.id}
-                    title={blog.title}
-                    subtitle={blog.subTitle}
-                    articlecontent={blog.articleContent}
-                    img={blog.img}
-                  />
-                );
-              })}
+              <Bloglist myBlogList={myBlogList} />
             </ul>
           </div>
         ) : (
           <div className="likeInner">
             <div className="likePost">좋아요한 글 {'>'}</div>
             <div className="likeBlog">
-              {likeBlogList.map(like => {
-                return (
-                  <Likebloglist
-                    key={like.id}
-                    username={like.userName}
-                    title={like.title}
-                    subtitle={like.subTitle}
-                    articlecontent={like.articleContent}
-                    img={like.img}
-                  />
-                );
-              })}
+              <Likebloglist likeBlogList={likeBlogList} />
             </div>
             <div className="recentPost">최근 본 글 {'>'}</div>
             <div className="recentBlog">
-              {recentBlogList.map(recent => {
-                return (
-                  <Recentbloglist
-                    key={recent.id}
-                    username={recent.userName}
-                    title={recent.title}
-                    subtitle={recent.subTitle}
-                    articlecontent={recent.articleContent}
-                    img={recent.img}
-                  />
-                );
-              })}
+              <Recentbloglist recentBlogList={recentBlogList} />
             </div>
           </div>
         )}

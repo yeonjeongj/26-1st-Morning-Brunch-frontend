@@ -2,8 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Tangerine&display=swap');
 
 .myPage {
-  height: 100%;
-
   main {
     .myPageCover {
       background-color: #f8f8f8;
@@ -13,8 +11,7 @@
       display: flex;
       align-items: center;
       margin: auto;
-      width: 700px;
-      height: 161px;
+      width: 970px;
       position: relative;
 
       .myImg {
@@ -75,11 +72,12 @@
   }
   .blogLike {
     @include flex(flex, 0, center, center);
+    margin: 4rem 0;
     button {
       border: none;
       background-color: white;
       font-size: 20px;
-      margin: 30px 10px;
+      margin: 3rem 1rem;
       cursor: pointer;
     }
     .activeMyBlogBtn,
