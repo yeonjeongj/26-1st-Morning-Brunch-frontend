@@ -16,7 +16,7 @@ class Nav extends React.Component {
   }
 
   handleUserData() {
-    fetch(`${API}/posts/users/1`)
+    fetch(`${API}/users/user/2`)
       .then(res => res.json())
       .then(data =>
         this.setState({
@@ -114,10 +114,7 @@ class Nav extends React.Component {
                 text="설정"
                 onClick={() => this.moveToContent('/mypage')}
               />
-              <Button
-                text="로그아웃"
-                onClick={() => this.moveToContent('/login')}
-              />
+              <Button text="로그아웃" onClick={() => this.moveToContent('/')} />
             </div>
           </div>
         </div>

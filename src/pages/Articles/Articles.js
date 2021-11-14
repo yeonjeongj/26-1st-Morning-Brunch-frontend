@@ -1,5 +1,5 @@
 import React from 'react';
-// import {API} from '../../config';
+import { API } from '../../config';
 import Nav from '../../components/Nav/Nav';
 import Footer from '../../components/Footer/Footer';
 import DetailHeader from './DetailContents/DetailHeader/DetailHeader';
@@ -18,10 +18,10 @@ class Articles extends React.Component {
     };
   }
 
-  // '${API}/posts/${this.props.match.params.id}'
-
   handleArticleMain = () => {
-    fetch('/data/articlesData.json', {
+    const { match } = this.props;
+
+    fetch(`${API}/posts/post/${match.params.id}`, {
       headers: { Authorization: localStorage.getItem('token') },
     })
       .then(res => res.json())

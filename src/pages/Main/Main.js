@@ -1,5 +1,5 @@
 import React from 'react';
-// import {API} from '../../config';
+import { API } from '../../config';
 import Nav from '../../components/Nav/Nav';
 import Footer from '../../components/Footer/Footer';
 import LikedContents from './LikedContents/LikedContents';
@@ -17,10 +17,8 @@ class Main extends React.Component {
     };
   }
 
-  // `${API}/main/LikeContent?limit=14`
-
   handleSlideContents = () => {
-    fetch('data/main/slideContents.json')
+    fetch(`${API}/posts/postlist?limit=14`)
       .then(res => res.json())
       .then(data =>
         this.setState({
@@ -29,14 +27,12 @@ class Main extends React.Component {
       );
   };
 
-  // `${API}/main/keyword`
-
   handleKeywordsData = () => {
-    fetch('data/main/keywordsData.json')
+    fetch(`${API}/posts/keyword`)
       .then(res => res.json())
       .then(data =>
         this.setState({
-          keywordsData: data.keyword_data,
+          keywordsData: data.tags,
         })
       );
   };

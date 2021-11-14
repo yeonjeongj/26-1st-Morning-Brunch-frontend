@@ -1,34 +1,34 @@
 [
   {
-    "id": 5,
-    "userName": "Kygo",
-    "title": "카이고",
-    "subTitle": "이건 소제목",
-    "articleContent": "아무거나 작가소개 인트로 룰라루루라라 호호호호호호호호호호호 호하하하하하히히히히히히ㅣ히항ㅎ오오오호ㅑㅗ야호야ㅗㅎ냐ㅗㅎㅎ오ㅗ앟닺ㄷ랒됄조댈ㄷㅈㄹㅎㄷㅈㅎㅈㄷ해ㅗㄷ재호댖핻ㅈㅎㅈㄷㅎ",
-    "img": "../images/login2.jpg"
+    "id": 2,
+    "userName": "라이키",
+    "title": "유럽식 가정식을 한국인 셰프가 풀어낸 올데이 브런지",
+    "subTitle": "플랩잭 팬트리 - Chef's Favorite",
+    "articleContent": "브런치는 바쁜 일상 탓에 거르게 된 아침과 이른 점심 사이에 먹을 끼니지만 꼭 그 때만 먹어야 하는 것은 아니다. 그렇게 탄생한게 바로 '플랩잭 팬트리'의 올데이 브런치, 'Chef's Favorite'이다. 닭고기를 다지고 바삭하게 볶아 만든 치킨 플레이크가 얹어진 샐러드가 발사믹 식초 소스를 품은 채 접시 한 가운데 담겨 있고, 따뜻한 토스트, 든든한 소시지와 베이컨, 토마토를 품고 있는 폭신하고 촉촉한 오믈렛, 파마산 치즈가 올라간 그린빈과 새송이버섯 볶음으로 샐러드를 감싸고 있다.",
+    "img": "https://i.ibb.co/M1qPXZq/2020-09-20-18-27-27-039.jpg"
   },
   {
-    "id": 6,
-    "userName": "Selena Gomez",
-    "title": "셀럽으로 산다는것은",
-    "subTitle": "국민 여동생",
-    "articleContent": "아무거나 작가소개 인트로 룰라루루라라로로롤로",
-    "img": "https://i.ibb.co/pPnjPc7/2021-11-07-5-44-41.png"
+    "id": 4,
+    "userName": "위디북스",
+    "title": "향신료의 나라, 인도의 브런치",
+    "subTitle": "향신료에 취하다",
+    "articleContent": "새로운 하루를 시작하면서 아침 식사를 든든히 해야 하루를 잘 날 수 있다는 사람들이 있습니다. 꽤나 오랜 시간동안 한국인에게는 든든하고 따뜻한 밥 한끼를 먹는 게 정석으로 여겨졌을 테지만, 요즘은 그렇지만도 않습니다. 아침 메뉴로 쌉싸래한 커피 한잔과 따끈한 토스트 한 조각이 자주 보이기 시작했으니까요. 오늘 이 순간에도 전 세계의 사람들이 각자의 문화를 담은 아침 식사를 즐기고 있을겁니다. 그 중에서 오늘은 인도로 가보려고 합니다",
+    "img": "https://images.unsplash.com/photo-1611725450473-d18c7b751c59?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1770&q=80"
   },
   {
-    "id": 7,
-    "userName": "Alan Walker",
-    "title": "디제잉보다 게임이 좋아",
-    "subTitle": "이건 소소소제목",
-    "articleContent": "아무거나 작가소개 인트로 룰라루루라라로로롤로",
-    "img": "https://i.ibb.co/pPnjPc7/2021-11-07-5-44-41.png"
+    "id": 11,
+    "userName": "가위손",
+    "title": "러시아에서 블린을 모른다면 간첩!",
+    "subTitle": "러시아의 아침",
+    "articleContent": "블린은 러시아에서 당당히 대표 브런치라고 말할 수 있는 아침메뉴입니다. 마슬레니짜에서 유래됐다고 하는데... 전병같이 반죽을 얇고 동그랗게 만들어 구워내는 팬케이크와 같은 요리입니다. 블린에는 연유, 잼, 연어알, 캐비어, 쿨. 햄, 야채, 초콜릿, 과일 등등을 기호에 맞게 곁들여 먹습니다.",
+    "img": "https://mblogthumb-phinf.pstatic.net/20150612_72/proverbs1639_1434114535706vsIdU_JPEG/%AC%DC%AC%E2%AC%D1%AC%E3%AC%DA%AC%D3%AC%ED%AC%D6-%AC%DC%AC%D1%AC%E2%AC%E4%AC%DA%AC%DF%AC%DC%AC%DA-%AC%D6%AC%D5%AC%D1-%AC%D2%AC%DD%AC%DA%AC%DF%AC%ED-%AC%DF%AC%F1%AC%DE%AC%DC%AC%D1-960135.jpeg?type=w2"
   },
   {
-    "id": 8,
-    "userName": "Clean Bandit",
-    "title": "나 음대나온 여자야",
-    "subTitle": "이건 소소소소제목",
-    "articleContent": "아무거나 작가소개 인트로 룰라루루라라로로롤로",
-    "img": "https://i.ibb.co/pPnjPc7/2021-11-07-5-44-41.png"
+    "id": 14,
+    "userName": "꾸며줘홈즈",
+    "title": "방배동카페 카페람베리",
+    "subTitle": "카페람베리",
+    "articleContent": "카페 람베리는 지하철 9호선 구반포역 1번 출구에서 약 450m 거리입니다.<br> 방배동 카페골목 초입에 있습니다. 언덕이 시작하기 전 이수교차로 부근에 위치해 있습니다. 크로크 마담(croque madama) 신선한 채소 샐러드와 계란을 곁들인 크로슈므슈와 비슷한 메뉴입니다.",
+    "img": "https://i.ibb.co/sKDh95h/2021-11-07-5-39-30.png"
   }
 ]

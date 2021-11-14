@@ -5,7 +5,7 @@ import './Likebloglist.scss';
 class Likebloglist extends Component {
   goToArticle = value => {
     const { history } = this.props;
-    history.push(`/article/${value}`);
+    history.push(`/articles/${value}`);
   };
 
   render() {

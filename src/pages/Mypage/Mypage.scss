@@ -1,5 +1,4 @@
 @import '../../styles/variables.scss';
-@import url('https://fonts.googleapis.com/css2?family=Tangerine&display=swap');
 
 .myPage {
   main {
@@ -7,6 +6,7 @@
       background-color: #f8f8f8;
       height: 320px;
     }
+
     .myPageWrap {
       display: flex;
       align-items: center;
@@ -18,6 +18,7 @@
         position: absolute;
         right: 0;
         top: -25%;
+
         .thumb {
           object-fit: cover;
           border-radius: 100%;
@@ -26,15 +27,18 @@
         }
       }
     }
+
     .myProfile {
       .myUser {
         font-weight: bold;
         font-size: 30px;
         padding: 20px 0 10px 0;
       }
+
       .myUserIntro {
         color: grey;
       }
+
       dl {
         padding-top: 30px;
         width: 700px;
@@ -51,11 +55,13 @@
             color: grey;
             margin-bottom: 5px;
           }
+
           span {
             font-size: 20px;
             color: grey;
           }
         }
+
         .btnMore {
           display: flex;
           align-items: center;
@@ -70,9 +76,11 @@
       }
     }
   }
+
   .blogLike {
     @include flex(flex, 0, center, center);
     margin: 4rem 0;
+
     button {
       border: none;
       background-color: white;
@@ -80,13 +88,20 @@
       margin: 3rem 1rem;
       cursor: pointer;
     }
+
     .activeMyBlogBtn,
     .activeLikeBlogBtn {
       color: #ffaa00;
       border-bottom: 1px solid #ffaa00;
     }
   }
+
   .myBlog {
     @include flex(flex, 0, center, center);
+    padding-bottom: 120px;
+
+    ul {
+      cursor: pointer;
+    }
   }
 }

@@ -23,7 +23,7 @@ class Keywords extends React.Component {
                   key={index}
                   onClick={() => this.linkToContent(`${keyword.post_id}`)}
                 >
-                  {keyword}
+                  {keyword.tag}
                 </div>
               );
             })}

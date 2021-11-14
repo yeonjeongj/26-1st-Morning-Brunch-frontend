@@ -19,7 +19,7 @@ class Authors extends React.Component {
       .then(res => res.json())
       .then(data =>
         this.setState({
-          usersData: data,
+          usersData: data.data,
         })
       );
   };
@@ -71,6 +71,7 @@ class Authors extends React.Component {
                 author_name,
                 author_job,
                 author_intro,
+                post_id,
                 post_tag,
               } = author;
               return (
@@ -82,15 +83,15 @@ class Authors extends React.Component {
                   <div className="authorKeywordBtns">
                     <Button
                       text={post_tag[0]}
-                      onClick={() => this.linkToContent(post_tag[0].post_id)}
+                      onClick={() => this.linkToContent(post_id[0])}
                     />
                     <Button
                       text={post_tag[1]}
-                      onClick={() => this.linkToContent(post_tag[1].post_id)}
+                      onClick={() => this.linkToContent(post_id[1])}
                     />
                     <Button
                       text={post_tag[2]}
-                      onClick={() => this.linkToContent(post_tag[2].post_id)}
+                      onClick={() => this.linkToContent(post_id[2])}
                     />
                   </div>
                 </div>
