@@ -5,6 +5,7 @@ import Button from '../../../../components/Button/Button';
 export class DetailUser extends React.Component {
   render() {
     const { articleLists } = this.props;
+
     return (
       <div className="detailUser">
         {articleLists && (
@@ -23,7 +24,6 @@ export class DetailUser extends React.Component {
                   <Button text={articleLists.author.user_tag[1]} />
                   <Button text={articleLists.author.user_tag[2]} />
                   <Button text={articleLists.author.user_tag[3]} />
-                  <Button text={articleLists.author.user_tag[4]} />
                 </div>
 
                 <p className="content">{articleLists.author.introduction}</p>

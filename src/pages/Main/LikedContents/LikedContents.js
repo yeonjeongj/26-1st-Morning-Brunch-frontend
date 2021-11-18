@@ -72,15 +72,7 @@ class LikedContents extends React.Component {
           >
             <div className="slideArticles">
               {slideContents.map((content, idx) => {
-                return (
-                  <SlideContent
-                    key={idx}
-                    id={content.post_id}
-                    backgroundImage={content.cover_image}
-                    articleText={content.title}
-                    articleAuthor={content.author_name}
-                  />
-                );
+                return <SlideContent key={idx} slideContent={content} />;
               })}
             </div>
           </div>

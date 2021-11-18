@@ -15,21 +15,23 @@ class Authors extends React.Component {
   }
 
   handleUsersData = () => {
-    fetch('data/main/usersData.json')
+    fetch(`${API}/posts/authors?tag=비건&limit=6`)
       .then(res => res.json())
       .then(data =>
         this.setState({
-          usersData: data,
+          usersData: data.data,
         })
       );
   };
 
-  isBtnActive = (btnNum, keyword) => {
-    this.setState({ activeBtn: btnNum });
-
-    fetch(`${API}?keyword=${keyword}&limit=6`)
+  updateUsersData = keyword => {
+    fetch(`${API}/posts/authors?tag=${keyword}&limit=6`)
       .then(res => res.json())
-      .then(res => this.setState({ usersData: res }));
+      .then(res => this.setState({ usersData: res.data }));
+  };
+
+  isBtnActive = (btnNum, keyword) => {
+    this.setState({ activeBtn: btnNum }, () => this.updateUsersData(keyword));
   };
 
   linkToContent = value => {
@@ -50,49 +52,51 @@ class Authors extends React.Component {
         <span className="subtitle">모닝엔 브런치 추천 작가</span>
         <div className="authorKeywordBtns">
           {KEYWORD_BTN_DATA.map((data, idx) => {
+            const { text, btnNum } = data;
             return (
               <Button
                 key={idx}
-                text={data.text}
-                onClick={() =>
-                  this.isBtnActive(`${data.btnNum}`, `${data.text}`)
-                }
-                style={activeBtn === `${data.btnNum}` ? true : false}
+                text={text}
+                onClick={() => this.isBtnActive(`${btnNum}`, `${text}`)}
+                style={activeBtn === `${btnNum}` ? true : false}
               />
             );
           })}
         </div>
         <div className="authorWrapper">
-          {usersData.map((author, idx) => {
-            return (
-              <div key={idx} className="authorCard">
-                <img alt="author" src={author.image} />
-                <span className="authorName">{author.author_name}</span>
-                <span className="authorJob">{author.author_job}</span>
-                <p>{author.author_intro}</p>
-                <div className="authorKeywordBtns">
-                  <Button
-                    text={author.keyword[0]}
-                    onClick={() =>
-                      this.linkToContent(author.keyword[0].post_id)
-                    }
-                  />
-                  <Button
-                    text={author.keyword[1]}
-                    onClick={() =>
-                      this.linkToContent(author.keyword[1].post_id)
-                    }
-                  />
-                  <Button
-                    text={author.keyword[2]}
-                    onClick={() =>
-                      this.linkToContent(author.keyword[2].post_id)
-                    }
-                  />
+          {usersData.length > 0 &&
+            usersData.map((author, idx) => {
+              const {
+                user_image,
+                author_name,
+                author_job,
+                author_intro,
+                post_id,
+                post_tag,
+              } = author;
+              return (
+                <div key={idx} className="authorCard">
+                  <img alt="author" src={user_image} />
+                  <span className="authorName">{author_name}</span>
+                  <span className="authorJob">{author_job}</span>
+                  <p>{author_intro}</p>
+                  <div className="authorKeywordBtns">
+                    <Button
+                      text={post_tag[0]}
+                      onClick={() => this.linkToContent(post_id[0])}
+                    />
+                    <Button
+                      text={post_tag[1]}
+                      onClick={() => this.linkToContent(post_id[1])}
+                    />
+                    <Button
+                      text={post_tag[2]}
+                      onClick={() => this.linkToContent(post_id[2])}
+                    />
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
         </div>
       </section>
     );
@@ -101,8 +105,8 @@ class Authors extends React.Component {
 
 const KEYWORD_BTN_DATA = [
   { text: '비건', btnNum: 'firstBtn' },
-  { text: '아메리칸 스타일', btnNum: 'secondBtn' },
-  { text: '요리고수', btnNum: 'thirdBtn' },
+  { text: '캠핑마니아', btnNum: 'secondBtn' },
+  { text: '맛집 블로거', btnNum: 'thirdBtn' },
 ];
 
 export default withRouter(Authors);

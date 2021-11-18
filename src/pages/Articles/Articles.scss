@@ -1,9 +1,11 @@
+@import '../../styles/variables.scss';
+
 .articles {
   .headerScroll {
-    height: 2px;
-    background: #ffaa00;
     position: fixed;
     top: 70px;
+    height: 2px;
+    @include theme('false', 'false', 'true');
     z-index: 98;
   }
 }

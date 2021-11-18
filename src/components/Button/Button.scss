@@ -9,6 +9,6 @@
   text-align: center;
 
   &.colored {
-    @include themeColor;
+    @include theme('true', 'true');
   }
 }

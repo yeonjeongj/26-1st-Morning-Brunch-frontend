@@ -1,6 +1,13 @@
-@mixin themeColor {
-  color: #ffaa00;
-  border: 1px solid #ffaa00;
+@mixin theme($color: 'false', $border: 'false', $background-color: 'false') {
+  @if $color == 'true' {
+    color: #ffaa00;
+  }
+  @if $border == 'true' {
+    border: 1px solid #ffaa00;
+  }
+  @if $background-color == 'true' {
+    background-color: #ffaa00;
+  }
 }
 
 @mixin themeFont {

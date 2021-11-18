@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { API } from '../../config';
 import './Login.scss';
 
 class Login extends React.Component {
@@ -13,7 +14,7 @@ class Login extends React.Component {
 
   goToMain = () => {
     const { history } = this.props;
-    history.push('/Main');
+    history.push('/main');
   };
 
   updateInputs = e => {
@@ -26,7 +27,8 @@ class Login extends React.Component {
   submitUserInfo = e => {
     const { idInput, pwInput } = this.state;
     e.preventDefault();
-    fetch('http://10.58.4.223:8000/users/signin', {
+
+    fetch(`${API}/users/signin`, {
       method: 'POST',
       body: JSON.stringify({
         email: idInput,
@@ -36,7 +38,8 @@ class Login extends React.Component {
       .then(response => response.json())
       .then(response => {
         if (response.MESSAGE === 'SUCCESS') {
-          this.goToMain();
+          localStorage.setItem('token', response.access_token);
+          return this.goToMain();
         } else alert('아이디와 비밀번호를 다시 확인하세요');
       });
   };
@@ -45,12 +48,15 @@ class Login extends React.Component {
     const { idInput, pwInput } = this.state;
     const isActiveButton =
       idInput.includes('@') && idInput.includes('.') && pwInput.length >= 8;
+
     return (
-      <main className="login">
+      <section className="login">
         <div className="loginWrap">
-          <div className="bannerSlide">
-            <img src="images/login1.jpg" alt="login1" />
-          </div>
+          <img
+            className="mainImage"
+            alt="morning&brunch"
+            src="images/login1.jpg"
+          />
           <div className="loginInner">
             <h1>morning & brunch</h1>
             <form className="loginForm">
@@ -79,16 +85,11 @@ class Login extends React.Component {
               </button>
             </form>
             <div className="underLoginForm">
-              <div>
-                <Link to="/Signup">회원가입</Link>
-              </div>
-              <a href="/find" className="lost">
-                비밀번호 찾기
-              </a>
+              <Link to="/signup">아직 회원이 아니신가요?</Link>
             </div>
           </div>
         </div>
-      </main>
+      </section>
     );
   }
 }

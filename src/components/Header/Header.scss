@@ -1,16 +1,16 @@
 .header {
-  width: 100%;
-  padding: 1rem 2rem;
   display: flex;
-  background-color: white;
   position: fixed;
   left: 0;
   top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: white;
   z-index: 97;
   transition: 0.3s;
 
   &.activated {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.8);
     border-bottom: 1px solid #ddd;
   }
 
@@ -18,13 +18,14 @@
     cursor: pointer;
 
     span {
+      display: block;
       width: 30px;
       height: 4px;
+      margin-top: 7px;
       margin-right: 2rem;
       background: black;
       border-radius: 8px;
-      display: block;
-      margin-top: 7px;
+      cursor: pointer;
     }
   }
 
@@ -32,9 +33,9 @@
     cursor: pointer;
 
     h2 {
+      color: black;
       font-family: 'Tangerine', cursive;
       font-size: 2.4rem;
-      color: black;
     }
   }
 }

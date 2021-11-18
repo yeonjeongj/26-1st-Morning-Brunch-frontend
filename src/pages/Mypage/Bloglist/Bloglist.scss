@@ -1,70 +1,66 @@
-.myBlog {
-  .blogList {
-    list-style: none;
-    position: relative;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid lightgrey;
-    width: 700px;
-    height: 180px;
-    margin: 0;
-    padding: 20px 0;
-    cursor: pointer;
+.blogList {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid lightgrey;
+  width: 700px;
+  height: 180px;
+  margin: 0;
+  padding: 20px 0;
+  cursor: pointer;
 
-    .post {
-      width: 540px;
-      margin: 0 0 10px 0;
+  .post {
+    width: 540px;
+    margin: 0 0 10px 0;
 
-      .title {
-        font-size: 20px;
+    .title {
+      font-size: 20px;
+    }
+
+    .wrapContent {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      max-height: 43px;
+      padding-top: 10px;
+      text-overflow: hidden;
+      overflow: hidden;
+
+      .subTitle {
+        color: grey;
+        font-size: 14px;
       }
 
-      .wrapContent {
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        max-height: 43px;
-        padding-top: 10px;
-        text-overflow: hidden;
-        overflow: hidden;
+      .icoBar {
+        color: grey;
+        margin: 0 8px;
+        font-size: 12px;
+      }
 
-        .subTitle {
-          color: grey;
-          font-size: 14px;
+      .articleContent {
+        p,
+        ul,
+        li,
+        div {
+          display: inline;
         }
 
-        .icoBar {
-          color: grey;
-          margin: 0 8px;
-          font-size: 12px;
+        img,
+        br,
+        a {
+          display: none;
         }
-
-        .articleContent {
-          p,
-          ul,
-          li,
-          div {
-            display: inline;
-          }
-
-          img,
-          br,
-          a,
-          &nbsp {
-            display: none;
-          }
-          font-size: 14px;
-          color: grey;
-        }
+        font-size: 14px;
+        color: grey;
       }
     }
   }
+}
 
-  .coverImg {
-    position: absolute;
-    right: 0;
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-  }
+.coverImg {
+  position: absolute;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
 }
